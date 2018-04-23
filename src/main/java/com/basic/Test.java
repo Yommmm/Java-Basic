@@ -1,12 +1,15 @@
 package com.basic;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Test {
 
 	public static void main(String[] args) {
 		System.out.println("start");
 		
 		Test test = new Test();
-		System.out.println(test.test("sync invoking"));
+		test.tset();
 		
 		System.out.println("end");
 	}
@@ -24,6 +27,13 @@ public class Test {
 		}.start();
 		
 		return string;
+	}
+	
+	public void tset() {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("1", "2");
+		map.put("1", "3");
+		System.out.println(map.toString());
 	}
 	
 }
