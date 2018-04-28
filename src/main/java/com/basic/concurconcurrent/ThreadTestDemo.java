@@ -5,7 +5,7 @@ public class ThreadTestDemo {
 	public static void main(String[] args) {
 		try {
 			ZhangFei zhangfei = new ZhangFei();
-			zhangfei.start();
+			zhangfei.notify();
 			
 			Thread.sleep(3000);
 			for(int i = 0; i < 10; i++) {
