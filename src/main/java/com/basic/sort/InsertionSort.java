@@ -28,7 +28,7 @@ public class InsertionSort {
 		for(int i = 1; i < list.length; i++) {
 			// 抓在右手上的牌
 			int rightValue = list[i];
-			// 左手上第一张牌的下标
+			// 左手上从右往左数第一张牌的下标
 			int leftIndex = i - 1;
 			// 由于左手上的牌是有序的，只要判断是否小于右边的牌就行
 			while(leftIndex >= 0 && list[leftIndex] > rightValue) {
