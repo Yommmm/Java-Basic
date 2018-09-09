@@ -50,6 +50,7 @@ public class MergeSort {
 		for (int k = 0; k < length; k++) {
 			list[left++] = temp[k];
 		}
+		System.out.println(Arrays.toString(list));
 	}
 
 }
