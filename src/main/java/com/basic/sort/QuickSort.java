@@ -1,5 +1,7 @@
 package com.basic.sort;
 
+import java.util.Arrays;
+
 public class QuickSort {
 
 	public static void main(String[] args) {
@@ -49,9 +51,11 @@ public class QuickSort {
 			if(list[i] < signValue) {
 				swap(list, tail, i);
 				tail++;
+				System.out.println(Arrays.asList(list).toString());
 			}
 		}
 		swap(list, tail - 1, left);
+		System.out.println(Arrays.asList(list).toString());
 		
 		return tail - 1;
 	}
