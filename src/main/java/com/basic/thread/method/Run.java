@@ -1,4 +1,4 @@
-package com.basic.thread;
+package com.basic.thread.method;
 
 public class Run {
 
@@ -33,8 +33,10 @@ public class Run {
 		Thread c = new Thread(myThread, "C");
 		Thread d = new Thread(myThread, "D");
 		System.out.println(a.isAlive());
+		System.out.println(a.currentThread().getName() + a.getId());
 		a.start();
 		System.out.println(a.isAlive());
+		System.out.println(a.currentThread().getName() + a.getId());
 		b.start();
 		System.out.println(a.isAlive());
 		c.start();

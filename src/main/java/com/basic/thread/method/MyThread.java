@@ -1,4 +1,4 @@
-package com.basic.thread;
+package com.basic.thread.method;
 
 public class MyThread extends Thread {
 
