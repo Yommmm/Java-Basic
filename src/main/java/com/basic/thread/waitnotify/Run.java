@@ -17,7 +17,7 @@ public class Run {
 		}
 	}*/
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try {
 			String a = new String("a");
 			Wait wait = new Wait(a);
@@ -25,6 +25,20 @@ public class Run {
 			wait.start();
 			wait1.start();
 			Thread.sleep(3000);
+			Notify notify = new Notify(a);
+			notify.start();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}*/
+	
+	public static void main(String[] args) {
+		try {
+			String a = new String("a");
+			Wait wait = new Wait(a);
+			wait.start();
+			Thread.sleep(5000);
+			wait.interrupt();
 			Notify notify = new Notify(a);
 			notify.start();
 		} catch (InterruptedException e) {
