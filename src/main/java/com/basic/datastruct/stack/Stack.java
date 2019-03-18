@@ -2,14 +2,14 @@ package com.basic.datastruct.stack;
 
 public interface Stack<E> {
 
-	public void push(E e);
+	void push(E e);
 	
-	public E pop();
+	E pop();
 	
-	public E peek();
+	E peek();
 	
-	public int getSize();
+	int getSize();
 	
-	public boolean isEmpty();
+	boolean isEmpty();
 	
 }

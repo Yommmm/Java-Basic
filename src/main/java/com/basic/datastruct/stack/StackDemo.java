@@ -3,7 +3,7 @@ package com.basic.datastruct.stack;
 public class StackDemo {
 
 	public static void main(String[] args) {
-		/*ArrayStack<Integer> stack = new ArrayStack<>();
+		ArrayStack<Integer> stack = new ArrayStack<>();
 		stack.push(999);
 		stack.push(888);
 		stack.push(777);
@@ -19,7 +19,7 @@ public class StackDemo {
 		System.out.println(stack.getCapacity());
 		
 		System.out.println(stack.getSize());
-		*/
+		
 		System.out.println(validate("{}{}[[]]({}){{[[]]}}()"));
 		
 	}
@@ -51,11 +51,7 @@ public class StackDemo {
 			}
 		}
 		
-		if(stack.isEmpty()) {
-			return true;
-		} else {
-			return false;
-		}
+		return stack.isEmpty();
 	}
 	
 }

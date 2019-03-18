@@ -1,43 +1,44 @@
-package com.basic.datastruct.stack;
+package com.basic.datastruct.queue;
 
 import com.basic.datastruct.array.Array;
 
-public class ArrayStack<E> implements Stack<E>{
-
-	private Array<E> arr;
+public class ArrayQueue<E> implements Queue<E> {
 	
-	public ArrayStack(int capacity) {
-		arr = new Array<E>(capacity);
+	private Array<E> arr;
+
+	public ArrayQueue(int capacity) {
+		arr = new Array<>(capacity);
 	}
 	
-	public ArrayStack() {
+	public ArrayQueue() {
 		this(10);
 	}
 
-	public void push(E e) {
+	@Override
+	public void enQueue(E e) {
 		arr.addLast(e);
 	}
-	
+
 	@Override
-	public E pop() {
-		return arr.removeLast();
+	public E deQueue() {
+		return arr.removeFirst();
 	}
-	
+
 	@Override
-	public E peek() {
-		return arr.getFirst();
+	public E getFront() {
+		return arr.get(0);
 	}
-	
+
 	@Override
 	public int getSize() {
 		return arr.getSize();
 	}
-	
+
 	@Override
 	public boolean isEmpty() {
 		return arr.isEmpty();
 	}
-	
+
 	public int getCapacity() {
 		return arr.getCapacity();
 	}
@@ -45,14 +46,14 @@ public class ArrayStack<E> implements Stack<E>{
 	@Override
 	public String toString() {
 		StringBuilder res = new StringBuilder();
-		res.append("Stack: [");
+		res.append("Queue: Front [");
 		for(int i = 0; i < arr.getSize(); i++) {
 			res.append(arr.get(i));
 			if(i != arr.getSize() - 1) {
 				res.append(", ");
 			}
 		}
-		res.append("] pop");
+		res.append("] Tail");
 		
 		return res.toString();
 	}
