@@ -1,9 +1,9 @@
-package com.basic.datastruct;
+package com.basic.datastruct.array;
 
 public class ArrayDemo {
 
 	public static void main(String[] args) {
-		Array arr = new Array(20);
+		Array<Integer> arr = new Array<>(20);
 		
 		for(int i = 0; i < 10; i++) {
 			arr.addLast(i);
@@ -18,6 +18,17 @@ public class ArrayDemo {
 		arr.set(1, 99);
 		
 		System.out.println(arr.toString());
+		
+		arr.remove(1);
+		System.out.println(arr.toString());
+		
+		arr.removeElement(9);
+		System.out.println(arr.toString());
+		
+		arr.removeFirst();
+		arr.removeLast();
+		System.out.println(arr.toString());
+		
 	}
 	
 }

@@ -5,4 +5,4 @@
  * @author Yom
  *
  */
-package com.basic.datastruct;
+package com.basic.datastruct.array;
