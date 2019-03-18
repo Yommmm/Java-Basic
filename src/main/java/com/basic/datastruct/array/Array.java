@@ -68,6 +68,14 @@ public class Array<E> {
 		return data[index];
 	}
 	
+	public E getFirst() {
+		return data[0];
+	}
+	
+	public E getLast() {
+		return data[size - 1];
+	}
+	
 	public void set(int index, E e) {
 		if(index < 0 || index >= size)
 			throw new IllegalArgumentException("Add faild, index is illegal!");
@@ -102,7 +110,11 @@ public class Array<E> {
 		size--;
 		data[size] = null;
 		
-		if(size <= data.length >> 1)
+		/**
+		 * Eager size <= data.length >> 1
+		 * Lazy size <= data.length >> 2
+		 */
+		if(size <= data.length >> 2 && data.length >> 1 != 0)
 			resize(data.length >> 1);
 			
 		return ret;
@@ -131,7 +143,7 @@ public class Array<E> {
 		for(int i = 0; i < size; i++) {
 			res.append(data[i]);
 			if(i != size - 1) {
-				res.append(",");
+				res.append(", ");
 			}
 		}
 		res.append("]");
