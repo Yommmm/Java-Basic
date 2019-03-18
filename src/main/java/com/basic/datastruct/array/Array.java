@@ -37,8 +37,11 @@ public class Array<E> {
 	}
 	
 	public void add(int index, E e) {
-		if(size == data.length)
-			throw new IllegalArgumentException("Add faild, Array is full!");
+//		if(size == data.length)
+//			throw new IllegalArgumentException("Add faild, Array is full!");
+		
+		if(size == data.length) 
+			resize(data.length << 1);
 		
 		if(index < 0 || index > size)
 			throw new IllegalArgumentException("Add faild, index is illegal!");
@@ -48,6 +51,15 @@ public class Array<E> {
 		
 		data[index] = e;
 		size++;
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void resize(int newCapacity) {
+		E[] newData = (E[])new Object[newCapacity];
+		for(int i = 0; i < size; i++) {
+			newData[i] = data[i];
+		}
+		data = newData;
 	}
 	
 	public E get(int index) {
@@ -84,11 +96,15 @@ public class Array<E> {
 			throw new IllegalArgumentException("Remove faild, index is illegal!");
 		
 		E ret = data[index];
-		for(int i = index + 1; i <= size; i++)
+		for(int i = index + 1; i < size; i++)
 			data[i - 1] = data[i];
 		
 		size--;
 		data[size] = null;
+		
+		if(size <= data.length >> 1)
+			resize(data.length >> 1);
+			
 		return ret;
 	}
 	
