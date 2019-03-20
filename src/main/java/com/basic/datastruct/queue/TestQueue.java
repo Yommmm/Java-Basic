@@ -8,8 +8,10 @@ public class TestQueue {
 		int testCount = 100000;
 		ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
 		LoopQueue<Integer> loopQueue = new LoopQueue<>();
+		LinkedListQueue<Integer> linkedListQueue = new LinkedListQueue<>();
 		System.out.println("ArrayQueue: " + testQueue(arrayQueue, testCount));
 		System.out.println("LoopQueue: " + testQueue(loopQueue, testCount));
+		System.out.println("LinkedListQueue: " + testQueue(linkedListQueue, testCount));
 	}
 	
 	public static double testQueue(Queue<Integer> queue, Integer testCount) {
