@@ -10,14 +10,18 @@ public class BSTDemo {
 		bst.add(8);
 		bst.add(4);
 		bst.add(2);
+		bst.add(7);
 		
 //		System.out.println(bst.contains(90));
 //		System.out.println(bst.contains(80));
 		
-		System.out.println(bst.toString());
+//		System.out.println(bst.toString());
+		
+		bst.preOrderNR();
+		System.out.println();
 		bst.preOrder();
-		bst.inOrder();
-		bst.postOrder();
+//		bst.inOrder();
+//		bst.postOrder();
 	}
 	
 }

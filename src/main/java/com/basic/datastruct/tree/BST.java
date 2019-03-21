@@ -1,5 +1,7 @@
 package com.basic.datastruct.tree;
 
+import java.util.Stack;
+
 public class BST<E extends Comparable<E>> {
 
 	private Node<E> root;
@@ -68,6 +70,23 @@ public class BST<E extends Comparable<E>> {
 			return contains(node.right, e);
 		}
 		
+	}
+	
+	public void preOrderNR() {
+		Stack<Node<E>> stack = new Stack<>();
+		
+		stack.push(root);
+		while(!stack.isEmpty()) {
+			Node<E> cur = stack.pop();
+			System.out.print(cur.e + ", ");
+			
+			if(null != cur.right) {
+				stack.push(cur.right);
+			}
+			if(null != cur.left) {
+				stack.push(cur.left);
+			}
+		}
 	}
 	
 	public void preOrder() {
