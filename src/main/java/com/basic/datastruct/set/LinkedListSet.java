@@ -18,7 +18,7 @@ public class LinkedListSet<E extends Comparable<E>> implements Set<E> {
 
 	@Override
 	public void remove(E e) {
-		
+		list.removeElement(e);
 	}
 
 	@Override

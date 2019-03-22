@@ -14,10 +14,11 @@ public class LinkedListDemo {
 		System.out.println(linkedList);
 		
 		linkedList.set(2, 777);
+		linkedList.removeElement(666);
 		System.out.println(linkedList);
 		
-//		System.out.println(linkedList.contains(777));
-//		System.out.println(linkedList.contains(888));
+		System.out.println(linkedList.contains(777));
+		System.out.println(linkedList.contains(888));
 		
 		linkedList.remove(2);
 		System.out.println(linkedList);

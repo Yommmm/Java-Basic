@@ -102,6 +102,18 @@ public class LinkedList<E> {
 		return remove(size - 1);
 	}
 	
+	public void removeElement(E e) {
+		Node<E> node = dummyHead;
+		while(null != node.next) {
+			if(e.equals(node.next.e)) {
+				Node<E> delNode = node.next;
+				node.next = delNode.next;
+				delNode.next = null;
+			}
+			node = node.next;
+		}
+	}
+	
 	public boolean contains(E e) {
 		
 		Node<E> cur = dummyHead.next;
