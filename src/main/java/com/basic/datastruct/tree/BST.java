@@ -1,5 +1,7 @@
 package com.basic.datastruct.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BST<E extends Comparable<E>> {
@@ -72,6 +74,9 @@ public class BST<E extends Comparable<E>> {
 		
 	}
 	
+	/**
+	 * 前序非递归
+	 */
 	public void preOrderNR() {
 		Stack<Node<E>> stack = new Stack<>();
 		
@@ -89,6 +94,9 @@ public class BST<E extends Comparable<E>> {
 		}
 	}
 	
+	/**
+	 * 前序递归
+	 */
 	public void preOrder() {
 		preOrder(root);
 		System.out.println("\n");
@@ -103,6 +111,9 @@ public class BST<E extends Comparable<E>> {
 		preOrder(node.right);
 	}
 	
+	/**
+	 * 中序遍历
+	 */
 	public void inOrder() {
 		inOrder(root);
 		System.out.println("\n");
@@ -117,6 +128,9 @@ public class BST<E extends Comparable<E>> {
 		inOrder(node.right);
 	}
 	
+	/**
+	 * 后续遍历
+	 */
 	public void postOrder() {
 		postOrder(root);
 		System.out.println("\n");
@@ -130,7 +144,212 @@ public class BST<E extends Comparable<E>> {
 		postOrder(node.right);
 		System.out.print(node.e + ", ");
 	}
+	
+	public void levelOrder() {
+		Queue<Node<E>> q = new LinkedList<>();
+		q.add(root);
+		
+		while(!q.isEmpty()) {
+			Node<E> cur = q.remove();
+			System.out.print(cur.e + ", ");
+			
+			if(null != cur.left) {
+				q.add(cur.left);
+			}
+			if(null != cur.right) {
+				q.add(cur.right);
+			}
+		}
+	}
+	
+	/**
+	 * 找最小值
+	 * @return
+	 */
+	public E minimumNR() {
+		Node<E> node = root;
+		while(null != node) {
+			if(null == node.left) {
+				return node.e;
+			}
+			node = node.left;
+		}
+		return null;
+	}
+	
+	public E minimum() {
+		return minimum(root).e;
+	}
+	
+	private Node<E> minimum(Node<E> node) {
+		if(null == node.left)
+			return node;
+		
+		return minimum(node.left);
+	}
+	/**************************/
+	
+	/**
+	 * 找最大值
+	 * @return
+	 */
+	public E maximumNR() {
+		Node<E> node = root;
+		while(null != node) {
+			if(null == node.right) {
+				return node.e;
+			}
+			node = node.right;
+		}
+		return null;
+	}
+	
+	public E maximum() {
+		return maximum(root).e;
+	}
+	
+	private Node<E> maximum(Node<E> node) {
+		if(null == node.right)
+			return node;
+		
+		return maximum(node.right);
+	}
+	/**************************/
 
+	/**
+	 * 删除最小值
+	 * @return
+	 */
+	public E removeMinNR() {
+		Node<E> node = root;
+		if(null == node.left) {
+			root = null;
+			size --;
+			return node.e;
+		}
+		
+		while(null != node.left.left) {
+			node = node.left;
+		}
+		
+		Node<E> delNode = node.left;
+		node.left = delNode.right;
+		
+		return delNode.e;
+	}
+	
+	public E removeMin() {
+		if(size == 0) {
+            throw new IllegalArgumentException("BST is empty!");
+        }
+		
+		E ret = minimum();
+		root = removeMin(root);
+		return ret;
+	}
+	
+	private Node<E> removeMin(Node<E> node) {
+		if(null == node.left) {
+			Node<E> rightNode = node.right;
+			node.right = null;
+			size --;
+			return rightNode;
+		}
+		
+		node.left = removeMin(node.left);
+		return node;
+		
+	}
+	/****************************/
+	
+	/**
+	 * 删除最大值
+	 * @return
+	 */
+	public E removeMaxNR() {
+		Node<E> node = root;
+		while(null != node) {
+			if(null == node.right) {
+				Node<E> delNode = node;
+				if(null != node.left) {
+					node = node.left;
+				} else {
+					node = null;
+				}
+				return delNode.e;
+			}
+			node = node.right;
+		}
+		return null;
+	}
+	
+	public E removeMax() {
+		if(size == 0) {
+            throw new IllegalArgumentException("BST is empty!");
+        }
+		
+		E ret = maximum();
+		root = removeMax(root);
+		return ret;
+	}
+	
+	private Node<E> removeMax(Node<E> node) {
+		if(null == node.right) {
+			Node<E> rightNode = node.left;
+			node.left = null;
+			size --;
+			return rightNode;
+		}
+		
+		node.right = removeMax(node.right);
+		return node;
+	}
+	/****************************/
+	
+	public void remover(E e) {
+		root = remove(root, e);
+	}
+	
+	private Node<E> remove(Node<E> node, E e) {
+		if(null == node)
+			return null;
+		
+		if(e.compareTo(node.e) < 0) {
+			node.left = remove(node.left, e);
+			return node;
+		} else if(e.compareTo(node.e) > 0) {
+			node.right = remove(node.right, e);
+			return node;
+		} else { // e.compareTo(node.e) == 0
+			
+			// 如果左子树为空，直接返回delNode的【右子树】给delNode父亲的子节点
+			if(null == node.left) {
+				Node<E> rightNode = node.right;
+				node.right = null;
+				size --;
+				return rightNode;
+			}
+			
+			// 如果左子树为空，直接返回delNode的【左子树】给delNode父亲的子节点
+			if(null == node.right) {
+				Node<E> leftNode = node.left;
+				node.left = null;
+				size --;
+				return leftNode;
+			}
+			
+			// 左右子树都不为空的情况下，选中右子树的最小节点【后继】或者左子树的最大节点【前驱】
+			Node<E> successor = minimum(node.right); // 找到右子树那个最小的后继节点
+			successor.right = removeMin(node.right); // 删掉那个右子树上最小的后继节点
+			successor.left = node.left;
+			
+			node.left = node.right = null; // delNode与树脱离关系
+			
+			return successor;
+		}
+		
+	}
+	
 	public int size() {
 		return size;
 	}
