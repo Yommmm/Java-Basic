@@ -9,7 +9,6 @@ public class PriorityQueueDemo {
 	}
 	
 	public void test() {
-		PriorityQueue<Integer> 
 		
 		
 	}
