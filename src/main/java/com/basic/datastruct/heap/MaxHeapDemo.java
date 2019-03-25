@@ -1,4 +1,4 @@
-package com.basic.datastruct.dump;
+package com.basic.datastruct.heap;
 
 import java.util.Random;
 
