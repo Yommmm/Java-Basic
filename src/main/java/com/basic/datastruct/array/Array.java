@@ -12,6 +12,15 @@ public class Array<E> {
 		this.size = 0;
 	}
 	
+	@SuppressWarnings("unchecked")
+	public Array(E[] arr) {
+		this.data = (E[])new Object[arr.length];
+		for(int i = 0; i < arr.length; i++) {
+			this.data[i] = arr[i];
+		}
+		this.size = arr.length;
+	}
+	
 	public Array() {
 		this(10);
 	}
@@ -133,6 +142,16 @@ public class Array<E> {
 		if(index != -1) {
 			remove(index);
 		}
+	}
+	
+	public void swap(int i,int j) {
+		if(i < 0 || j < 0 || i >= size || j >= size)
+			throw new IllegalArgumentException("Index is illegal!");
+		
+		E temp = null;
+		temp = data[i];
+		data[i] = data[j];
+		data[j] = temp;
 	}
 
 	@Override
