@@ -49,16 +49,15 @@ public class MinHeap<E extends Comparable<E>> {
 		}
 	}
 	
-	public E extractMax() {
-		E ret = findMax();
-		data.swap(0, data.getSize() - 1);
-		data.removeLast();
+	public E extractMin() {
+		E ret = findMin();
+		data.removeFirst();
 		siftDown(0);
 		
 		return ret;
 	}
 	
-	public E findMax() {
+	public E findMin() {
 		if(0 == data.getSize())
 			throw new IllegalArgumentException("MaxHeap is empty!");
 		return data.get(0);
@@ -79,7 +78,7 @@ public class MinHeap<E extends Comparable<E>> {
 	}
 	
 	public E replace(E e) {
-		E ret = findMax();
+		E ret = findMin();
 		data.set(0, e);
 		siftDown(0);
 		
@@ -88,7 +87,7 @@ public class MinHeap<E extends Comparable<E>> {
 	
 	public void heapify(E[] arr) {
 		this.data = new Array<>(arr);
-		for(int i = parent(data.getSize() - 1); i <= 0; i--) {
+		for(int i = parent(data.getSize() - 1); i >= 0; i--) {
 			siftDown(i);
 		}
 	}
