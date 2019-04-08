@@ -60,7 +60,7 @@ public class MinHeapDemo {
 	
 	public static void test3() {
 		long startTime = System.nanoTime();
-		int count = 100000;
+		int count = 10;
 		MinHeap<Integer> heap = new MinHeap<>();
 		Integer[] testArr = new Integer[count];
 		

@@ -52,7 +52,6 @@ public class MinHeap<E extends Comparable<E>> {
 	public E extractMin() {
 		E ret = findMin();
 		data.removeFirst();
-		siftDown(0);
 		
 		return ret;
 	}
