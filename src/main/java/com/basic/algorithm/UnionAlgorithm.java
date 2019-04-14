@@ -174,7 +174,8 @@ public class UnionAlgorithm {
 		Interval c5 = new Interval(12, 23);
 
 		// Interval[] duan = { d1, d2, d3 };
-		Interval[] duan = { d1, d2, d3, d4, d5, d6, d7, d8, d9, c1, c2, c3, c4, c5 };
+		Interval[] duan = { d1, d3 };
+//		Interval[] duan = { d1, d2, d3, d4, d5, d6, d7, d8, d9, c1, c2, c3, c4, c5 };
 
 		long sc = System.currentTimeMillis();
 		ua.calc(duan);
