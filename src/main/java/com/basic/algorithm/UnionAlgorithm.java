@@ -4,18 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <pre>
- * 该类用ArrayList表示区间的集合,每一个元素表示一个区间,
- * ArrayList中元素顺序为这些元素表示的区间按照在数轴上在顺序排列,
+ * 该类用ArrayList表示区间的集合,每一个元素表示一个区间 ArrayList中元素顺序为这些元素表示的区间按照在数轴上在顺序排列
  * 
- * 
- * </pre>
- * 
- * @author luoxian
- * @since Sep 5, 2008 4:38:09 PM
- * @version 1.0
+ * @author Yom
+ *
  */
 public class UnionAlgorithm {
+
 	/**
 	 * 存放结果 集合
 	 */
@@ -87,9 +82,7 @@ public class UnionAlgorithm {
 	}
 
 	/**
-	 * <pre>
-	 * 在集合value中查找点point的位置
-	 * 从序列号为from开始查找
+	 * 在集合value中查找点point的位置 从序列号为from开始查找
 	 * 
 	 * 返回:为一个数组,包括两个值[type,index]
 	 * 如果type=0,表示point点不在集合value中的任何一个区间内,该点在第index区间的前面
@@ -97,8 +90,6 @@ public class UnionAlgorithm {
 	 * 
 	 * (说明:type为0的特殊情况为该点在集合中最后一个区间的后面,此时
 	 * 尽管value.get(value.size())并不存在,我们仍然把index赋值为value.size())
-	 * 
-	 * </pre>
 	 * 
 	 * @param value
 	 * @param from
@@ -166,8 +157,6 @@ public class UnionAlgorithm {
 	}
 
 	public static void main(String[] args) {
-		Interval[] v = { new Interval(1, 3), new Interval(4, 2) };
-
 		UnionAlgorithm ua = new UnionAlgorithm();
 		Interval d1 = new Interval(7, 9);
 		Interval d2 = new Interval(5, 7);
@@ -184,9 +173,9 @@ public class UnionAlgorithm {
 		Interval c4 = new Interval(34, 54);
 		Interval c5 = new Interval(12, 23);
 
-//		Interval[] duan = { d1, d2, d3 };
-		Interval[] duan = {d1,d2,d3,d4,d5,d6,d7,d8,d9,c1,c2,c3,c4,c5};
-		
+		// Interval[] duan = { d1, d2, d3 };
+		Interval[] duan = { d1, d2, d3, d4, d5, d6, d7, d8, d9, c1, c2, c3, c4, c5 };
+
 		long sc = System.currentTimeMillis();
 		ua.calc(duan);
 		sc = System.currentTimeMillis() - sc;
