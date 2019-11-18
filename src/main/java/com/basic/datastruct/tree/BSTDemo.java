@@ -21,11 +21,12 @@ public class BSTDemo {
 		}
 		System.out.println(list);
 		System.out.println(list.size());*/
-		
-		new BSTDemo().testDelNode();
-		
+
+		BSTDemo bstdemo = new BSTDemo();
+		bstdemo.testDelNode();
+
 //		System.out.println(bst.toString());
-//		
+//
 //		bst.preOrderNR();
 //		bst.preOrder();
 //		bst.levelOrder();
@@ -57,8 +58,10 @@ public class BSTDemo {
 		bst.add(77);
 		
 		bst.inOrder();
-		bst.remover(66);
+//		bst.remove(66);
 		bst.inOrder();
+		bst.preOrder();
+		bst.postOrder();
 		
 	}
 	

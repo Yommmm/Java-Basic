@@ -78,7 +78,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
 				return rightNode;
 			}
 			
-			// 如果左子树为空，直接返回delNode的【左子树】给delNode父亲的子节点
+			// 如果右子树为空，直接返回delNode的【左子树】给delNode父亲的子节点
 			if(null == node.right) {
 				Node leftNode = node.left;
 				node.left = null;

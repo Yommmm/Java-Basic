@@ -274,10 +274,10 @@ public class BST<E extends Comparable<E>> {
 	
 	private Node<E> removeMax(Node<E> node) {
 		if(null == node.right) {
-			Node<E> rightNode = node.left;
+			Node<E> leftNode = node.left;
 			node.left = null;
 			size --;
-			return rightNode;
+			return leftNode;
 		}
 		
 		node.right = removeMax(node.right);
@@ -285,7 +285,7 @@ public class BST<E extends Comparable<E>> {
 	}
 	/****************************/
 	
-	public void remover(E e) {
+	public void remove(E e) {
 		root = remove(root, e);
 	}
 	
@@ -309,7 +309,7 @@ public class BST<E extends Comparable<E>> {
 				return rightNode;
 			}
 			
-			// 如果左子树为空，直接返回delNode的【左子树】给delNode父亲的子节点
+			// 如果右子树为空，直接返回delNode的【左子树】给delNode父亲的子节点
 			if(null == node.right) {
 				Node<E> leftNode = node.left;
 				node.left = null;

@@ -5,6 +5,10 @@ import java.util.List;
 
 public class TestArrayList {
 
+	public int a;
+
+	public String b;
+
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();
 		list.add("1");
@@ -23,8 +27,17 @@ public class TestArrayList {
 		int i = 10;
 		System.out.println(++i);
 
+		++i;
+		System.out.println(i);
+
 		int j = 10;
 		System.out.println(j++);
 
+		j++;
+		System.out.println(j);
+
+		TestArrayList obj = new TestArrayList();
+		System.out.println(obj.a);
+		System.out.println(obj.b);
 	}
 }
