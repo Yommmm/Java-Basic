@@ -6,8 +6,9 @@ public class MaxHeapDemo {
 
 	public static void main(String[] args) {
 //		test1();
-		test2();
-		test3();
+//		test2();
+//		test3();
+		test4();
 	}
 	
 	public static void test1() {
@@ -84,7 +85,17 @@ public class MaxHeapDemo {
 				throw new RuntimeException("illegal!");
 			}
 		}
-		
+
+	}
+
+	public static void test4() {
+		MaxHeap<Integer> heap = new MaxHeap<>();
+		Integer[] arr = {1, 3, 5, 11, 12, 6, 7};
+
+		System.out.println(arr.toString());
+
+		heap.heapify(arr);
+		System.out.println(heap.toString());
 	}
 	
 }
