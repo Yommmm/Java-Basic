@@ -91,7 +91,7 @@ public class MaxHeap<E extends Comparable<E>> {
 		for(int i = parent(data.getSize() - 1); i >= 0; i--) {
 			siftDown(i);
 		}
-	}
+}
 
 	@Override
 	public String toString() {
