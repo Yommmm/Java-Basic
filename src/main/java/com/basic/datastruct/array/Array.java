@@ -1,5 +1,9 @@
 package com.basic.datastruct.array;
 
+/**
+ * 动态数组
+ * @param <E>
+ */
 public class Array<E> {
 	
 	private E[] data;
