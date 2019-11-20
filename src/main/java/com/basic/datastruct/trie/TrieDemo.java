@@ -11,8 +11,18 @@ public class TrieDemo {
 
 //        trieDemo.testAddAndcontains();
 
-        trieDemo.testPerformance();
+//        trieDemo.testPerformance();
+        trieDemo.testDelete();
 
+    }
+
+    public void testDelete() {
+        Trie trie = new Trie();
+        trie.add("String");
+        trie.add("Strinj");
+        trie.delete("String");
+        System.out.println(trie.contains("String"));
+        System.out.println(trie.contains("Strinj"));
     }
 
     public void testAddAndcontains() {
