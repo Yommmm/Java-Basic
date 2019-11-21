@@ -1,8 +1,11 @@
 package com.basic.datastruct.unionfind;
 
+/**
+ * 星型的队长-队员结构
+ */
 public class UnionFind1 implements UF {
 
-    private int id[];
+    private int id[]; // id[i]表示队长所在位置
 
     public UnionFind1(int size) {
         this.id = new int[size];
