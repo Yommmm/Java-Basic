@@ -35,7 +35,7 @@ public class UnionFind6 implements UF {
             throw new IllegalArgumentException("p is out of bound.");
         }
 
-        while (p != parent[p]) {
+        if (p != parent[p]) {
             /**
              * 压缩路径
              * 前四个版本是我拿你当爸爸

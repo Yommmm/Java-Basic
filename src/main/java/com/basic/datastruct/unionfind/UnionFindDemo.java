@@ -6,8 +6,10 @@ public class UnionFindDemo {
         UnionFindDemo ufd = new UnionFindDemo();
 //        ufd.testDemo1();
 //        ufd.testDemo2();
-        ufd.testDemo3();
-        ufd.testDemo4();
+//        ufd.testDemo3();
+//        ufd.testDemo4();
+        ufd.testDemo5();
+        ufd.testDemo6();
     }
 
     public void testDemo1() {
@@ -30,14 +32,24 @@ public class UnionFindDemo {
         this.coreTest(uf);
     }
 
+    public void testDemo5() {
+        UF uf = new UnionFind5(100);
+        this.coreTest(uf);
+    }
+
+    public void testDemo6() {
+        UF uf = new UnionFind6(100);
+        this.coreTest(uf);
+    }
+
     private void coreTest(UF uf) {
         System.out.println(uf.getSize());
 
         uf.unionElements(1, 10);
-        uf.unionElements(2, 10);
-        uf.unionElements(4, 10);
-        uf.unionElements(5, 9);
-        uf.unionElements(6, 5);
+        uf.unionElements(10, 11);
+        uf.unionElements(9, 19);
+        uf.unionElements(19, 80);
+        uf.unionElements(80, 10);
 
         System.out.println(uf.isConnected(1, 2));
         System.out.println(uf.isConnected(5, 6));
