@@ -1,5 +1,8 @@
 package com.basic.datastruct.avl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AVLTree<K extends Comparable<K>, V> {
 
     private Node root;
@@ -17,6 +20,31 @@ public class AVLTree<K extends Comparable<K>, V> {
 
     public boolean isEmpty() {
         return this.size == 0;
+    }
+
+    public boolean isBST() {
+        List<K> keys = new ArrayList<>();
+        inOrder(keys);
+
+        for(int i = 1; i < keys.size(); i++) {
+            if(keys.get(i - 1).compareTo(keys.get(i)) > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void inOrder(List<K> keys) {
+        inOrder(root, keys);
+    }
+
+    public void inOrder(Node node, List<K> keys) {
+        if(null == node)
+            return;
+
+        inOrder(node.left, keys);
+        keys.add(node.key);
+        inOrder(node.right, keys);
     }
 
     /**
@@ -142,9 +170,9 @@ public class AVLTree<K extends Comparable<K>, V> {
         }
 
         if (key.compareTo(node.key) > 0) {
-            return add(node.right, key, value);
+            node.right = add(node.right, key, value);
         } else if (key.compareTo(node.key) < 0) {
-            return add(node.left, key, value);
+            node.left = add(node.left, key, value);
         } else {
             // 重复key更新
             node.value = value;

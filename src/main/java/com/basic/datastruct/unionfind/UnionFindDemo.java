@@ -9,7 +9,7 @@ public class UnionFindDemo {
 //        ufd.testDemo3();
 //        ufd.testDemo4();
         ufd.testDemo5();
-        ufd.testDemo6();
+//        ufd.testDemo6();
     }
 
     public void testDemo1() {
@@ -46,10 +46,10 @@ public class UnionFindDemo {
         System.out.println(uf.getSize());
 
         uf.unionElements(1, 10);
-        uf.unionElements(10, 11);
-        uf.unionElements(9, 19);
-        uf.unionElements(19, 80);
-        uf.unionElements(80, 10);
+        uf.unionElements(11, 1);
+        uf.unionElements(12, 11);
+        uf.unionElements(13, 12);
+        uf.unionElements(14, 13);
 
         System.out.println(uf.isConnected(1, 2));
         System.out.println(uf.isConnected(5, 6));
