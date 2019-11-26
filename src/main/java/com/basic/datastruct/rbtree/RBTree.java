@@ -6,7 +6,11 @@ package com.basic.datastruct.rbtree;
  * 2.根节点一定是黑色
  * 3.叶子节点（空节点）一定是黑色
  * 4.红色节点的孩子节点一定是黑色，不可能存在两个连续红色节点
- * 5.从任意节点到期每个叶子节点的所有路径都包含相同的黑色节点
+ * 5.从任意节点到期每个叶子节点的所有路径都包含相同的黑色节点(黑平衡)
+ * 6.红色节点一定是左倾/右倾的
+ *
+ * 红黑树本质与2-3树一致
+ * 2-3树是一个完全平衡二叉树
  * @param <K>
  * @param <V>
  */
@@ -109,16 +113,14 @@ public class RBTree<K extends Comparable<K>, V> {
 
         // 红节点向黑节点那边旋转
         // 两步操作保证了红色节点一定是向左倾斜
-        if (isRed(node.left) && !isRed(node.right)) {
-            node = rightRotate(node);
-        }
-        if (isRed(node.right) && !isRed(node.left)) {
+        if (isRed(node.right) && !isRed(node.left))
             node = leftRotate(node);
-        }
 
-        if (isRed(node.left) && isRed(node.right)) {
+        if (isRed(node.left) && isRed(node.left.left))
+            node = rightRotate(node);
+
+        if (isRed(node.left) && isRed(node.right))
             flipColors(node);
-        }
 
         return node;
     }

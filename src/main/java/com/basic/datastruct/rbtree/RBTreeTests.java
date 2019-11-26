@@ -12,7 +12,7 @@ public class RBTreeTests {
         RBTreeTests tests = new RBTreeTests();
 
 //        tests.rbtreeTest1();
-        tests.testPerformance();
+//        tests.testPerformance();
         tests.comparePreformance();
     }
 
