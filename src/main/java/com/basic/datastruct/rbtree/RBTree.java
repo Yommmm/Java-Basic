@@ -1,5 +1,15 @@
 package com.basic.datastruct.rbtree;
 
+/**
+ * 红黑树
+ * 1.节点颜色非黑即红
+ * 2.根节点一定是黑色
+ * 3.叶子节点（空节点）一定是黑色
+ * 4.红色节点的孩子节点一定是黑色，不可能存在两个连续红色节点
+ * 5.从任意节点到期每个叶子节点的所有路径都包含相同的黑色节点
+ * @param <K>
+ * @param <V>
+ */
 public class RBTree<K extends Comparable<K>, V> {
 
     private static final boolean RED = true;
@@ -65,6 +75,7 @@ public class RBTree<K extends Comparable<K>, V> {
 
     /**
      * 颜色翻转
+     *
      * @param node
      */
     private void flipColors(Node node) {
@@ -97,15 +108,15 @@ public class RBTree<K extends Comparable<K>, V> {
             node.value = value;
 
         // 红节点向黑节点那边旋转
-        // 两步操作保证了左子树一路向左，右子树一路向右
-        if(isRed(node.left) && !isRed(node.right)) {
+        // 两步操作保证了红色节点一定是向左倾斜
+        if (isRed(node.left) && !isRed(node.right)) {
             node = rightRotate(node);
         }
-        if(isRed(node.right) && !isRed(node.left)) {
+        if (isRed(node.right) && !isRed(node.left)) {
             node = leftRotate(node);
         }
 
-        if(isRed(node.left) && isRed(node.right)) {
+        if (isRed(node.left) && isRed(node.right)) {
             flipColors(node);
         }
 
@@ -117,7 +128,7 @@ public class RBTree<K extends Comparable<K>, V> {
     }
 
     private void preOrder(Node node) {
-        if(null == node) {
+        if (null == node) {
             return;
         }
 
@@ -196,15 +207,12 @@ public class RBTree<K extends Comparable<K>, V> {
         if (node == null)
             return null;
 
-        Node retNode;
         if (key.compareTo(node.key) < 0) {
             node.left = remove(node.left, key);
-//            return node;
-            retNode = node;
+            return node;
         } else if (key.compareTo(node.key) > 0) {
             node.right = remove(node.right, key);
-//            return node;
-            retNode = node;
+            return node;
         } else {   // key.compareTo(node.key) == 0
 
             // 待删除节点左子树为空的情况
@@ -233,24 +241,8 @@ public class RBTree<K extends Comparable<K>, V> {
 
             node.left = node.right = null;
 
-//            return successor;
-            retNode = successor;
+            return successor;
         }
-
-        // 红节点向黑节点那边旋转
-        if(isRed(retNode.left) && !isRed(retNode.right)) {
-            retNode = rightRotate(retNode);
-        }
-
-        if(isRed(retNode.right) && !isRed(retNode.left)) {
-            retNode = leftRotate(retNode);
-        }
-
-        if(isRed(retNode.left) && isRed(retNode.right)) {
-            flipColors(retNode);
-        }
-
-        return retNode;
     }
 
     private class Node {
