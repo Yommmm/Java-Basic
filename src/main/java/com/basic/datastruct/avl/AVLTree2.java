@@ -52,21 +52,22 @@ public class AVLTree2<K extends Comparable<K>, V> {
 
     /**
      * 判断该二叉树是否是一棵二分搜索树
+     *
      * @return
      */
-    public boolean isBST(){
+    public boolean isBST() {
 
         ArrayList<K> keys = new ArrayList<>();
         inOrder(root, keys);
-        for(int i = 1 ; i < keys.size() ; i ++)
-            if(keys.get(i - 1).compareTo(keys.get(i)) > 0)
+        for (int i = 1; i < keys.size(); i++)
+            if (keys.get(i - 1).compareTo(keys.get(i)) > 0)
                 return false;
         return true;
     }
 
-    private void inOrder(Node node, ArrayList<K> keys){
+    private void inOrder(Node node, ArrayList<K> keys) {
 
-        if(node == null)
+        if (node == null)
             return;
 
         inOrder(node.left, keys);
@@ -76,6 +77,7 @@ public class AVLTree2<K extends Comparable<K>, V> {
 
     /**
      * 判断是否为平衡二叉树
+     *
      * @return
      */
     public boolean isBalanced() {
@@ -83,12 +85,12 @@ public class AVLTree2<K extends Comparable<K>, V> {
     }
 
     private boolean isBalanced(Node node) {
-        if(null == node) {
+        if (null == node) {
             return true;
         }
 
         int balanceFactor = getBalanceFactor(node);
-        if(Math.abs(balanceFactor) > 1) {
+        if (Math.abs(balanceFactor) > 1) {
             return false;
         }
 
@@ -174,19 +176,23 @@ public class AVLTree2<K extends Comparable<K>, V> {
          * 1.左链表右旋
          * 2.右链表左旋
          */
+        // LL
         if (balanceFactor > 1 && getBalanceFactor(node.left) >= 0) {
             return rightRotate(node);
         }
 
+        // RR
         if (balanceFactor < -1 && getBalanceFactor(node.right) <= 0) {
             return leftRotate(node);
         }
 
+        // LR
         if (balanceFactor > 1 && getBalanceFactor(node.left) < 0) {
             node.left = leftRotate(node.left);
             return rightRotate(node);
         }
 
+        // RL
         if (balanceFactor < -1 && getBalanceFactor(node.right) > 0) {
             node.right = rightRotate(node.right);
             return leftRotate(node);
@@ -200,7 +206,7 @@ public class AVLTree2<K extends Comparable<K>, V> {
     }
 
     private void preOrder(Node node) {
-        if(null == node) {
+        if (null == node) {
             return;
         }
 
@@ -279,12 +285,13 @@ public class AVLTree2<K extends Comparable<K>, V> {
         if (node == null)
             return null;
 
+        Node retNode;
         if (key.compareTo(node.key) < 0) {
             node.left = remove(node.left, key);
-            return node;
+            retNode = node;
         } else if (key.compareTo(node.key) > 0) {
             node.right = remove(node.right, key);
-            return node;
+            retNode = node;
         } else {   // key.compareTo(node.key) == 0
 
             // 待删除节点左子树为空的情况
@@ -313,8 +320,41 @@ public class AVLTree2<K extends Comparable<K>, V> {
 
             node.left = node.right = null;
 
-            return successor;
+            retNode = successor;
         }
+        if (retNode == null)
+            return null;
+
+        // 更新height
+        retNode.height = 1 + Math.max(getHeight(retNode.left), getHeight(retNode.right));
+
+        // 计算平衡因子
+        int balanceFactor = getBalanceFactor(retNode);
+
+        // 平衡维护
+        // LL
+        if (balanceFactor > 1 && getBalanceFactor(retNode.left) >= 0) {
+            return rightRotate(retNode);
+        }
+
+        // RR
+        if (balanceFactor < -1 && getBalanceFactor(retNode.right) <= 0) {
+            return leftRotate(retNode);
+        }
+
+        // LR
+        if (balanceFactor > 1 && getBalanceFactor(retNode.left) < 0) {
+            retNode.left = leftRotate(retNode.left);
+            return rightRotate(retNode);
+        }
+
+        // RL
+        if (balanceFactor < -1 && getBalanceFactor(retNode.right) > 0) {
+            retNode.right = rightRotate(retNode.right);
+            return leftRotate(retNode);
+        }
+
+        return retNode;
     }
 
 }
