@@ -2,7 +2,7 @@
 
 #### 全局变量
 
-DEFAULT_INITIAL_CAPACITY 默认初始容量 16 1<<30
+DEFAULT_INITIAL_CAPACITY 默认初始容量 16 1<<4
 
 DEFAULT_LOAD_FACTOR 默认加载因子 0.75f
 
@@ -127,3 +127,4 @@ final float loadFactor 加载因子
         afterNodeInsertion(evict);
         return null;
     }
+
