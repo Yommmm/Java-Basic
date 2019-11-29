@@ -20,9 +20,13 @@ public class Solution27 {
     }
 
     public int removeElement(int[] nums, int val) {
+        // 赋值指针
         int index = 0;
 
+        // 扫描指针
         for(int i = 0; i < nums.length; i++) {
+            // 扫描到不匹配的值，使用赋值指针进行赋值；
+            // 扫描到匹配值，赋值指针跳过新增
             if(nums[i] != val) {
                 nums[index] = nums[i];
                 index ++;
