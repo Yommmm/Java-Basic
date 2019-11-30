@@ -84,8 +84,8 @@ public class Solution2 {
             prev.next = new ListNode(newVal % 10);
             prev = prev.next;
 
-            l1 = l1 != null ? l1.next : l1;
-            l2 = l2 != null ? l2.next : l2;
+            l1 = l1 != null ? l1.next : null;
+            l2 = l2 != null ? l2.next : null;
         }
 
         if(up == 1) {
