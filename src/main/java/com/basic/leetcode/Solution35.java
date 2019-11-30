@@ -31,14 +31,15 @@ public class Solution35 {
     public static void main(String[] args) {
         Solution35 solution = new Solution35();
 
-        int[] nums = {1, 3, 5, 6};
-        System.out.println(solution.searchInsert(nums, 5));
-        System.out.println(solution.searchInsert(nums, 2));
-        System.out.println(solution.searchInsert(nums, 7));
-        System.out.println(solution.searchInsert(nums, 0));
-
-        int[] nums2 = {};
-        System.out.println(solution.searchInsert(nums2, 0));
+        int[] nums = {1, 3, 5, 6, 7, 8, 9};
+        System.out.println(solution.searchInsert2(nums, 4));
+//        System.out.println(solution.searchInsert2(nums, 5));
+//        System.out.println(solution.searchInsert2(nums, 2));
+//        System.out.println(solution.searchInsert2(nums, 7));
+//        System.out.println(solution.searchInsert2(nums, 0));
+//
+//        int[] nums2 = {};
+//        System.out.println(solution.searchInsert2(nums2, 0));
     }
 
     public int searchInsert(int[] nums, int target) {
@@ -51,5 +52,24 @@ public class Solution35 {
     }
 
     // 可以使用折半查找
+    public int searchInsert2(int[] nums, int target) {
+        int len = nums.length;
+        int left = 0;
+        int right = len;
+
+        while(left < right) {
+            int mid = (right + left) >>> 1;
+
+            if(nums[mid] < target) {
+                left = mid + 1;
+            } else if(nums[mid] > target) {
+                right = mid;
+            } else {
+                return mid;
+            }
+        }
+
+        return left;
+    }
 
 }

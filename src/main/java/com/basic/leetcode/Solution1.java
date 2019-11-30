@@ -22,6 +22,10 @@ public class Solution1 {
         int[] nums3 = new int[]{3, 3};
         int[] result3 = s.twoSum2(nums3, 6);
         System.out.println(result3[0] + "," + result3[1]);
+
+        int[] nums4 = new int[]{5, 6};
+        int[] result4 = s.twoSum2(nums4, 11);
+        System.out.println(result4[0] + "," + result4[1]);
     }
 
     public int[] twoSum(int[] nums, int target) {
