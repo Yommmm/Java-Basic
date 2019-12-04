@@ -27,7 +27,8 @@ public class Solution33 {
     /**
      * 4 5 6 7 0 1 2
      * 6 7 0 1 2 4 5
-     *
+     * 问题不断细化
+     * 旨在能在有序的数据段内找出目标值
      * @param nums
      * @param target
      * @return
@@ -43,16 +44,20 @@ public class Solution33 {
             }
 
             if (nums[left] <= nums[mid]) {  //左边升序
-                if (target >= nums[left] && target <= nums[mid]) {//在左边范围内
+                if (target >= nums[left] && target <= nums[mid]) {
+                    // 在左边升序范围内查找
                     right = mid - 1;
-                } else {//只能从右边找
+                } else {
+                    // 从右边找
                     left = mid + 1;
                 }
 
             } else { //右边升序
-                if (target >= nums[mid] && target <= nums[right]) {//在右边范围内
+                if (target >= nums[mid] && target <= nums[right]) {
+                    // 在右边升序范围内查找
                     left = mid + 1;
-                } else {//只能从左边找
+                } else {
+                    // 从左边找
                     right = mid - 1;
                 }
 
@@ -61,6 +66,53 @@ public class Solution33 {
         }
 
         return -1;  //没找到
+    }
+
+    /**
+     * 解题思路：
+     * 1.寻找左右哪边有序
+     * 2.判断有序数据段是否满足查询条件
+     *      Y：直接二分查找
+     *      N：重复【1】【2】步骤直到问题细化到【Y】
+     * 可理解为把有序的数据段全部排除掉，最后留下的就是解
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int search2(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        int mid = left + (right - left) / 2;
+
+        while(left <= right) {
+            if (nums[mid] == target) {
+                return mid;
+            }
+
+            if(nums[left] <= nums[mid]) {
+                // 继续问题细化
+                if(nums[left] <= target && target < nums[mid]) {
+                    // 从左边范围寻找
+                    right = mid - 1;
+                } else {
+                    // 从右边范围寻找
+                    left = mid + 1;
+                }
+            } else {
+                if(nums[mid] < target && target <= nums[right]) {
+                    // 从左边范围寻找
+                    left = mid + 1;
+                } else {
+                    // 从右边范围寻找
+                    right = mid - 1;
+                }
+            }
+
+            // 问题细化
+            mid = mid = left + (right - left) / 2;
+        }
+
+        return -1;
     }
 
 }
