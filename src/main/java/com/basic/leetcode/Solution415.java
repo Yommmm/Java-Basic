@@ -21,7 +21,7 @@ public class Solution415 {
     public static void main(String[] args) {
         Solution415 solution = new Solution415();
         System.out.println(solution.addStrings("1234", "766"));
-        System.out.println(solution.addStrings("1234", "766"));
+        System.out.println(solution.addStrings("9234", "766"));
     }
 
     public String addStrings(String num1, String num2) {
