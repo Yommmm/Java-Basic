@@ -33,7 +33,17 @@ import java.util.List;
 public class Solution51 {
 
     public static void main(String[] args) {
+        Solution51 solution = new Solution51();
 
+        List<String> temp = new ArrayList<>();
+        temp.add(".Q..");
+        temp.add("...Q");
+        temp.add("Q...");
+
+        System.out.println(solution.isValidate(temp, "..Q.", 3));
+        System.out.println(solution.isValidate(temp, "...Q", 3));
+        System.out.println(solution.isValidate(temp, ".Q..", 3));
+        System.out.println(solution.isValidate(temp, "Q...", 3));
     }
 
     public List<List<String>> solveNQueens(int n) {
@@ -42,11 +52,38 @@ public class Solution51 {
         return result;
     }
 
-    private void rc(int n, List<List<String>> result, List<String> temp) {
+    private void rc(int n, int rank, String str, List<List<String>> result, List<String> temp) {
+        // 递归终止条件
+        if(isValidate(temp, str, n)) {
+            temp.add(str);
+        } else {
+            return;
+        }
 
         for(int i = 0; i < n; i++) {
-            rc(i, result, temp);
+            StringBuilder sb = new StringBuilder();
+//            sb.insert();
+            rc(n, i, sb.toString(), result, temp);
         }
+    }
+
+    private boolean isValidate(List<String> result, String insert, int i) {
+        int q = insert.indexOf("Q");
+
+        for(int j = 0; j < result.size(); j++) {
+            int rq = result.get(j).indexOf("Q");
+
+            /**
+             * x1 == x2;
+             * y1 == y2;
+             * Math.abs((y1 - y2) / (x1 - x2)) == 1;
+             */
+            if(rq == q || i == j || Math.abs((rq - q) / (i - j)) == 1) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 }
