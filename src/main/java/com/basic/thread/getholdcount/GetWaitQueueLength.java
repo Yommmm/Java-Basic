@@ -44,9 +44,11 @@ public class GetWaitQueueLength {
 		for(int i = 1; i <= 10; i++) {
 			new Thread(runnable).start();
 		}
-		
-		Thread.sleep(2000);
-		getWaitQueueLength.notifyMethod();
+
+		for(int i = 1; i <= 10; i++) {
+			Thread.sleep(1000);
+			getWaitQueueLength.notifyMethod();
+		}
 	}
 	
 }

@@ -14,7 +14,9 @@ public class Run1 {
 			threadBB.setName("B");
 			threadBB.start();
 			Thread.sleep(5000);
+
 			myService1.signalAll_A();
+//			myService1.signalAll_B();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
