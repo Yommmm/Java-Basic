@@ -9,7 +9,7 @@ public class Solution54 {
     public static void main(String[] args) {
         Solution54 solution = new Solution54();
 
-        /*int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         System.out.println(solution.spiralOrder(matrix));
         System.out.println("================================");
         int[][] matrix2 = {{1, 2, 3}, {4, 5, 6}};
@@ -34,7 +34,7 @@ public class Solution54 {
         System.out.println("================================");
         int[][] matrix8 = {{1, 2}, {6, 3}, {5, 4}};
         System.out.println(solution.spiralOrder(matrix8));
-        System.out.println("================================");*/
+        System.out.println("================================");
 
         int[][] matrix9 = {{2, 5, 8}, {4, 0, -1}};
         System.out.println(solution.spiralOrder(matrix9));
