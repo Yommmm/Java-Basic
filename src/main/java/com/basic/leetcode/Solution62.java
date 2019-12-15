@@ -36,11 +36,35 @@ public class Solution62 {
     public static void main(String[] args) {
         Solution62 solution = new Solution62();
 
-        System.out.println(solution.uniquePaths(1, 1));
+        System.out.println(solution.uniquePaths(3, 3));
     }
 
+    /**
+     * 解题思路：动态规划，问题细化
+     * 我们令 dp[i][j] 是到达 i, j 最多路径
+     * 动态方程：dp[i][j] = dp[i-1][j] + dp[i][j-1]
+     * 注意，对于第一行 dp[0][j]，或者第一列 dp[i][0]，由于都是在边界，所以只能为 1
+     * 时间复杂度：O(m*n)O(m∗n)
+     *
+     * 空间复杂度：O(m * n)O(m∗n)
+     *
+     * @param m
+     * @param n
+     * @return
+     */
     public int uniquePaths(int m, int n) {
-        return 0;
+        int[][] map = new int[m][n];
+
+        for(int i = 0; i < n; i++) map[0][i] = 1;
+        for(int j = 0; j < m; j++) map[j][0] = 1;
+
+        for(int i = 1; i < m; i++) {
+            for(int j = 1; j < n; j++) {
+                map[i][j] = map[i - 1][j] + map[i][j - 1];
+            }
+        }
+
+        return map[m - 1][n - 1];
     }
 
 }
