@@ -27,7 +27,7 @@ public class Solution77 {
 
     public static void main(String[] args) {
         Solution77 solution = new Solution77();
-        System.out.println(solution.combine(5, 4));
+        System.out.println(solution.combine(9, 8));
     }
 
     public List<List<Integer>> combine(int n, int k) {
@@ -48,7 +48,7 @@ public class Solution77 {
             return;
         }
 
-        for(int i = start; i <= n; i++) {
+        for(int i = start; i <= n - k + 1; i++) {
             temp.add(i);
             combine(i + 1, n, k - 1, result, temp);
             temp.remove(temp.size() - 1);
