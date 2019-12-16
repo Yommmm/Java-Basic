@@ -25,10 +25,10 @@ import java.util.List;
  * 输出：low = 1000, high = 13000
  * 输出：[1234,2345,3456,4567,5678,6789,12345]
  */
-public class Solution19121502 {
+public class Solution5124 {
 
     public static void main(String[] args) {
-        Solution19121502 solution = new Solution19121502();
+        Solution5124 solution = new Solution5124();
         System.out.println(solution.sequentialDigits(1000, 13000));
     }
 

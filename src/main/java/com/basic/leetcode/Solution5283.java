@@ -31,12 +31,12 @@ package com.basic.leetcode;
  * 输入：head = [0,0]
  * 输出：0
  */
-public class Solution19121501 {
+public class Solution5283 {
 
     public static void main(String[] args) {
-        Solution19121501 solution = new Solution19121501();
-        ListNode list = solution.getList(0,0);
-        System.out.println(solution.getDecimalValue(list));
+        Solution5283 solution = new Solution5283();
+        ListNode list = solution.getList(1,0,1,0,1);
+        System.out.println(solution.getDecimalValue2(list));
     }
 
     int sum = 0;
@@ -54,6 +54,23 @@ public class Solution19121501 {
         int i = rc(head.next);
         sum = sum + head.next.val * i;
         return i * 2;
+    }
+
+    /**
+     * 1 0 1 0 1
+     * (((1 * 2) + 0) * 2) + 1) * 2) + 0) * 2) + 1
+     * @param head
+     * @return
+     */
+    public int getDecimalValue2(ListNode head) {
+        int sum = 0;
+        while (head != null) {
+            sum <<= 1;
+            sum = head.val + sum;
+            head = head.next;
+        }
+
+        return sum;
     }
 
     public class ListNode {
