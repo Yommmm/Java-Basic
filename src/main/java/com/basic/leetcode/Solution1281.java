@@ -28,10 +28,10 @@ package com.basic.leetcode;
  * 链接：https://leetcode-cn.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Solution191208 {
+public class Solution1281 {
 
     public static void main(String[] args) {
-        Solution191208 solution = new Solution191208();
+        Solution1281 solution = new Solution1281();
         System.out.println(solution.subtractProductAndSum(100000));
     }
 
