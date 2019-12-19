@@ -22,6 +22,16 @@ package com.basic.leetcode;
  */
 public class Solution96 {
 
+    /**
+     * 动态规划
+     *
+     * ①从数组第二个元素开始
+     * ②取当前元素的【左右元素集合】的【笛卡尔积】作为该元素作为根节点的【不同二叉树数】
+     * ③数组中所有根节点的【不同二叉树数】和作为最终输出
+     *
+     * @param n
+     * @return
+     */
     public int numTrees(int n) {
         int[] G = new int[n + 1];
         G[0] = 1;
@@ -37,6 +47,7 @@ public class Solution96 {
 
     /**
      * 卡特兰数
+     * 定义：C(0)=1, C(n+1)=[2(2n+1)/(n+2)]*Cn
      */
     public int numTrees2(int n) {
         // Note: we should use long here instead of int, otherwise overflow
