@@ -3,7 +3,9 @@ package com.basic.jvm;
 public class Test {
 
     public static void main(String[] args) {
-        System.out.println(test());
+        while(true) {
+            System.out.println(test());
+        }
     }
 
     public static String test() {
