@@ -23,10 +23,10 @@ package com.basic.leetcode;
  * 解释：
  * 只有 1771 是位数为偶数的数字。
  */
-public class Solution122201 {
+public class Solution5291 {
 
     public static void main(String[] args) {
-        Solution122201 solution = new Solution122201();
+        Solution5291 solution = new Solution5291();
 
         System.out.println(solution.findNumbers(new int[]{12,345,2,6,7896}));
         System.out.println(solution.findNumbers(new int[]{555,901,482,1771}));
