@@ -2,7 +2,14 @@ package com.basic.basic;
 
 public class StringDemo {
 
-    public void testStringMemory() {
+    private static final String a = "1";
+
+    public static void main(String[] args) {
+        testStringMemory();
+        Math.round(-1.5);
+    }
+
+    public static void testStringMemory() {
         String a = "programming";
         String b = new String("programming");
         String c = "program" + "ming";
@@ -12,6 +19,7 @@ public class StringDemo {
         System.out.println(a.equals(b));
         System.out.println(a.equals(c));
         System.out.println(a.intern() == b.intern());
+        System.out.println(a == b.intern());
     }
 
     /**
