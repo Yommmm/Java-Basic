@@ -1,5 +1,7 @@
 package com.basic.leetcode;
 
+import javafx.util.Pair;
+
 import java.util.*;
 
 /**
@@ -90,16 +92,23 @@ public class Solution5305 {
     public List<String> watchedVideosByFriends(List<List<String>> watchedVideos, int[][] friends, int id, int level) {
         int rank = 1;
         List<Integer> temp = new ArrayList<>();
+        Set<Integer> visited = new HashSet<>();
         for (int i = 0; i < friends[id].length; i++) {
-            temp.add(friends[id][i]);
+            if (!visited.contains(id)) {
+                visited.add(id);
+                temp.add(friends[id][i]);
+            }
         }
 
         while (rank < level) {
             List<Integer> leveltemp = new ArrayList<>();
             for (int i = 0; i < temp.size(); i++) {
                 int[] friend = friends[temp.get(i)];
-                for (int j = 0; j < friend.length; j++) {
-                    leveltemp.add(friend[j]);
+                if (!visited.contains(temp.get(i))) {
+                    visited.add(temp.get(i));
+                    for (int j = 0; j < friend.length; j++) {
+                        leveltemp.add(friend[j]);
+                    }
                 }
             }
             temp = leveltemp;
@@ -118,6 +127,49 @@ public class Solution5305 {
         map.keySet().forEach(a -> result.add(a));
 
         return result;
+    }
+
+    public List<String> watchedVideosByFriends2(List<List<String>> watchedVideos, int[][] friends, int id, int level) {
+        Queue<Integer> queue = new LinkedList<>();
+        Set<Integer> visited = new HashSet<>();
+        queue.offer(id);
+        visited.add(id);
+        int len = 0;
+        while (!queue.isEmpty() && len < level) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                Integer idd = queue.poll();
+                for (int j = 0; j < friends[idd].length; j++) {
+                    if (!visited.contains(friends[idd][j])) {
+                        queue.add(friends[idd][j]);
+                        visited.add(friends[idd][j]);
+                    }
+                }
+            }
+            len++;
+        }
+
+        Map<String, Integer> map = new HashMap<>();
+        while (!queue.isEmpty()) {
+            Integer idd = queue.poll();
+            for (int i = 0; i < watchedVideos.get(idd).size(); i++) {
+                map.put(watchedVideos.get(idd).get(i), map.getOrDefault(watchedVideos.get(idd).get(i), 0) + 1);
+            }
+        }
+
+        PriorityQueue<Pair<String, Integer>> priorityQueue = new PriorityQueue<>((t1, t2) -> {
+            if (t1.getValue().equals(t2.getValue())) {
+                return t1.getKey().compareTo(t2.getKey());
+            } else {
+                return t1.getValue().compareTo(t2.getValue());
+            }
+        });
+        map.forEach((key, value) -> priorityQueue.add(new Pair<>(key, value)));
+        List<String> ans = new ArrayList<>();
+        while (!priorityQueue.isEmpty()) {
+            ans.add(priorityQueue.poll().getKey());
+        }
+        return ans;
     }
 
 }
