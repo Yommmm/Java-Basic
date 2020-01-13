@@ -1,7 +1,5 @@
 package com.basic.leetcode;
 
-import com.basic.datastruct.map.Solution;
-
 import java.util.Arrays;
 
 /**
