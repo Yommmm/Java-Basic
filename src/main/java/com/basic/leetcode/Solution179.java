@@ -23,17 +23,19 @@ import java.util.Comparator;
 public class Solution179 {
 
     public static void main(String[] args) {
-
+        Solution179 solution = new Solution179();
+        System.out.println(solution.largestNumber(new int[]{10, 2}));
+        System.out.println(solution.largestNumber(new int[]{3, 30, 34, 9, 5}));
     }
 
-    public String largestNumber1(int[] nums) {
+    public String largestNumber(int[] nums) {
         String[] asStrs = new String[nums.length];
         for (int i = 0; i < nums.length; i++) {
             asStrs[i] = String.valueOf(nums[i]);
         }
 
         Arrays.sort(asStrs, new LargerNumberComparator());
-        if (asStrs[0].equals("0")) {
+        if ("0".equals(asStrs[0])) {
             return "0";
         }
 
