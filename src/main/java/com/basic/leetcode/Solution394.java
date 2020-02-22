@@ -34,7 +34,7 @@ public class Solution394 {
         int multi = 0;
         LinkedList<Integer> countStack = new LinkedList<>();
         LinkedList<String> charStack = new LinkedList<>();
-        
+
         for (Character c : s.toCharArray()) {
             if (c == '[') {
                 countStack.addLast(multi);
@@ -48,8 +48,7 @@ public class Solution394 {
                 res = new StringBuilder(charStack.removeLast() + tmp);
             } else if (c >= '0' && c <= '9') {
                 multi = multi * 10 + Integer.parseInt(c + "");
-            }
-            else {
+            } else {
                 res.append(c);
             }
         }
