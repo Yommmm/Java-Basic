@@ -237,7 +237,6 @@ public class BST<E extends Comparable<E>> {
 		
 		node.left = removeMin(node.left);
 		return node;
-		
 	}
 	/****************************/
 	
