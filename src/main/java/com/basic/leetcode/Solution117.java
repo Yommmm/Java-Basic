@@ -42,6 +42,7 @@ public class Solution117 {
 
     /**
      * 二叉树性质和带虚拟头节点的链表结合解答该问题
+     *
      * @param root
      * @return
      */

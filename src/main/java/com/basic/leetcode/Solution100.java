@@ -55,9 +55,9 @@ public class Solution100 {
      * @return
      */
     public boolean isSameTree2(TreeNode p, TreeNode q) {
-        if(q == null && p == null) return true;
-        if(q == null || p == null) return false;
-        if(q.val != p.val) return false;
+        if (q == null && p == null) return true;
+        if (q == null || p == null) return false;
+        if (q.val != p.val) return false;
 
         return isSameTree2(p.left, q.left) && isSameTree(p.right, q.right);
     }

@@ -12,7 +12,7 @@ public class ListNode {
     public static ListNode getList(int... nums) {
         ListNode node = new ListNode(nums[0]);
         ListNode tail = node;
-        for(int i = 1; i < nums.length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             tail.next = new ListNode(nums[i]);
             tail = tail.next;
         }
@@ -22,7 +22,7 @@ public class ListNode {
 
     public static void printNode(ListNode listNode) {
         StringBuilder sb = new StringBuilder();
-        while(listNode != null) {
+        while (listNode != null) {
             sb.append(listNode.val + "->");
             listNode = listNode.next;
         }

@@ -40,7 +40,7 @@ public class Solution387 {
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if(1 == map.get(c)) return i;
+            if (1 == map.get(c)) return i;
         }
 
         return -1;

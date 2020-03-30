@@ -26,15 +26,15 @@ public class Solution20 {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             if (!stack.isEmpty() && ')' == s.charAt(i)) {
-                if(stack.pop() != '(') {
+                if (stack.pop() != '(') {
                     return false;
                 }
             } else if (!stack.isEmpty() && ']' == s.charAt(i)) {
-                if(stack.pop() != '[') {
+                if (stack.pop() != '[') {
                     return false;
                 }
             } else if (!stack.isEmpty() && '}' == s.charAt(i)) {
-                if(stack.pop() != '{') {
+                if (stack.pop() != '{') {
                     return false;
                 }
             } else {

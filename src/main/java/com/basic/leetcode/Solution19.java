@@ -56,7 +56,7 @@ public class Solution19 {
 
     public void printNode(ListNode listNode) {
         StringBuilder sb = new StringBuilder();
-        while(listNode != null) {
+        while (listNode != null) {
             sb.append(listNode.val + "->");
             listNode = listNode.next;
         }
@@ -65,25 +65,25 @@ public class Solution19 {
     }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if(head == null) {
+        if (head == null) {
             return head;
         }
 
         int remove = remove(head, n);
-        if(remove == n) {
+        if (remove == n) {
             return head.next;
         }
         return head;
     }
 
     private int remove(ListNode head, int n) {
-        if(head == null) {
+        if (head == null) {
             return 0;
         }
 
         int removeIndex = remove(head.next, n);
-        if(n == removeIndex) {
-            if(null != head.next) {
+        if (n == removeIndex) {
+            if (null != head.next) {
                 ListNode temp = head.next;
                 head.next = temp.next;
                 temp.next = null;
@@ -91,7 +91,8 @@ public class Solution19 {
                 head.next = null;
             }
             return Integer.MIN_VALUE;
-        } {
+        }
+        {
             return removeIndex + 1;
         }
     }
@@ -108,7 +109,7 @@ public class Solution19 {
     public ListNode getList(int... nums) {
         ListNode node = new ListNode(nums[0]);
         ListNode tail = node;
-        for(int i = 1; i < nums.length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             tail.next = new ListNode(nums[i]);
             tail = tail.next;
         }

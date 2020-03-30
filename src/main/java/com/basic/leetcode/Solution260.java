@@ -43,7 +43,7 @@ public class Solution260 {
         int[] result = new int[set.size()];
         int i = 0;
         Iterator<Integer> iterator = set.iterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             result[i] = iterator.next();
             i++;
         }

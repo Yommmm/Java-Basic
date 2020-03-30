@@ -32,7 +32,7 @@ public class Solution108 {
     }
 
     public TreeNode sortedArrayToBST(int[] nums) {
-        if(null == nums || 0 == nums.length) {
+        if (null == nums || 0 == nums.length) {
             return null;
         }
 
@@ -57,7 +57,7 @@ public class Solution108 {
     }
 
     public TreeNode sortedArrayToBST2(int[] nums) {
-        if(null == nums || 0 == nums.length) {
+        if (null == nums || 0 == nums.length) {
             return null;
         }
 
@@ -65,7 +65,7 @@ public class Solution108 {
     }
 
     public TreeNode sortedArrayToBST2(int[] nums, int start, int end) {
-        if(start > end) {
+        if (start > end) {
             return null;
         }
 

@@ -46,14 +46,14 @@ public class RBTreeTests {
         int n = 20000000;
 
         ArrayList<Integer> testData = new ArrayList<>(n);
-        for(int i = 0 ; i < n ; i ++)
+        for (int i = 0; i < n; i++)
             testData.add(i);
 
         // Test AVL
         long startTime = System.nanoTime();
 
         AVLTree2<Integer, Integer> avl = new AVLTree2<>();
-        for (Integer x: testData)
+        for (Integer x : testData)
             avl.add(x, null);
 
         long endTime = System.nanoTime();
@@ -66,7 +66,7 @@ public class RBTreeTests {
         startTime = System.nanoTime();
 
         RBTree<Integer, Integer> rbt = new RBTree<>();
-        for (Integer x: testData)
+        for (Integer x : testData)
             rbt.add(x, null);
 
         endTime = System.nanoTime();

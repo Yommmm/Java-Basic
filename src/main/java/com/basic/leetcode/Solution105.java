@@ -40,7 +40,7 @@ public class Solution105 {
     }
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        if(0 == preorder.length || 0 == inorder.length) {
+        if (0 == preorder.length || 0 == inorder.length) {
             return null;
         }
 

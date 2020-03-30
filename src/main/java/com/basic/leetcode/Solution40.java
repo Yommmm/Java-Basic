@@ -67,7 +67,7 @@ public class Solution40 {
 
         // 递归终止条件2
         if (target == 0) {
-            if(!result.contains(temp)) {
+            if (!result.contains(temp)) {
                 result.add(new ArrayList<>(temp));
             }
 

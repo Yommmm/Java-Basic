@@ -7,24 +7,24 @@ import com.basic.datastruct.map.Solution;
  * <p>
  * 例如，给定二叉树
  * <p>
- *     1
- *    / \
- *   2   5
- *  / \   \
+ * 1
+ * / \
+ * 2   5
+ * / \   \
  * 3   4   6
  * 将其展开为：
  * <p>
  * 1
- *  \
- *   2
- *    \
- *     3
- *      \
- *       4
- *        \
- *         5
- *          \
- *           6
+ * \
+ * 2
+ * \
+ * 3
+ * \
+ * 4
+ * \
+ * 5
+ * \
+ * 6
  * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list

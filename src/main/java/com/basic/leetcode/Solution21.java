@@ -2,9 +2,9 @@ package com.basic.leetcode;
 
 /**
  * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
- *
+ * <p>
  * 示例：
- *
+ * <p>
  * 输入：1->2->4, 1->3->4
  * 输出：1->1->2->3->4->4
  */
@@ -23,7 +23,7 @@ public class Solution21 {
     public ListNode getList(int... nums) {
         ListNode node = new ListNode(nums[0]);
         ListNode tail = node;
-        for(int i = 1; i < nums.length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             tail.next = new ListNode(nums[i]);
             tail = tail.next;
         }
@@ -33,6 +33,7 @@ public class Solution21 {
 
     /**
      * O(mn)
+     *
      * @param l1
      * @param l2
      * @return
@@ -45,11 +46,11 @@ public class Solution21 {
             // l2 从第一个元素开始往 l1 里面塞，时间复杂度O(n)
             ListNode cur = l1;
             ListNode prev = null;
-            while(cur != null && newNode.val > cur.val) {
+            while (cur != null && newNode.val > cur.val) {
                 prev = cur;
                 cur = cur.next;
             }
-            if(prev == null) {
+            if (prev == null) {
                 l1 = newNode;
             } else {
                 prev.next = newNode;
@@ -62,6 +63,7 @@ public class Solution21 {
 
     /**
      * 迭代方式
+     *
      * @param l1
      * @param l2
      * @return
@@ -71,8 +73,8 @@ public class Solution21 {
 
         ListNode prev = dummyHead;
         // 总有个会先处理完
-        while(l1 != null && l2 != null) {
-            if(l1.val <= l2.val) {
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
                 prev.next = l1;
                 l1 = l1.next;
             } else {

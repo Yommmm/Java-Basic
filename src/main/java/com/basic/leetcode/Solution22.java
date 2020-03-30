@@ -5,17 +5,16 @@ import java.util.List;
 
 /**
  * 给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。
- *
+ * <p>
  * 例如，给出 n = 3，生成结果为：
- *
+ * <p>
  * [
- *   "((()))",
- *   "(()())",
- *   "(())()",
- *   "()(())",
- *   "()()()"
+ * "((()))",
+ * "(()())",
+ * "(())()",
+ * "()(())",
+ * "()()()"
  * ]
- *
  */
 public class Solution22 {
 
@@ -68,7 +67,7 @@ public class Solution22 {
 
     public List<String> generateParenthesis2(int n) {
         List<String> result = new ArrayList<>();
-        if(n == 0) {
+        if (n == 0) {
             return result;
         }
 
@@ -78,17 +77,17 @@ public class Solution22 {
     }
 
     private void rc(String append, int left, int right, List<String> result) {
-        if(left == 0 && right == 0) {
+        if (left == 0 && right == 0) {
             result.add(append);
             return;
         }
 
-        if(left > 0) {
+        if (left > 0) {
             rc(append + "(", left - 1, right, result);
         }
 
         // 保证在接上最后一个右括号之前，又括号数量不超过左括号数量，保证解的正确性
-        if(right > 0 && right > left) {
+        if (right > 0 && right > left) {
             rc(append + ")", left, right - 1, result);
         }
     }

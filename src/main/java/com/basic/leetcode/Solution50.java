@@ -15,18 +15,18 @@ public class Solution50 {
     }
 
     public double myPow(double x, int n) {
-        if(x == 0 || x == 1) {
+        if (x == 0 || x == 1) {
             return x;
         }
 
         int N = n;
-        if(N < 0) {
+        if (N < 0) {
             x = 1 / x;
             N = -N;
         }
 
         double result = 1;
-        for(long i = 0; i < N; i++) {
+        for (long i = 0; i < N; i++) {
             result = result * x;
         }
 
@@ -34,13 +34,13 @@ public class Solution50 {
     }
 
     public double myPow2(double x, int n) {
-        if(x == 0 || x == 1) {
+        if (x == 0 || x == 1) {
             return x;
         }
 
         // 使用长整型，-2147483648在进行取反操作时，符号位无法改变依然是-2147483648
         long N = n;
-        if(N < 0) {
+        if (N < 0) {
             x = 1 / x;
             N = -N;
         }

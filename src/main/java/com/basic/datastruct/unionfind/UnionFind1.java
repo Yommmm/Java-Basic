@@ -10,7 +10,7 @@ public class UnionFind1 implements UF {
     public UnionFind1(int size) {
         this.id = new int[size];
 
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             id[i] = i;
         }
     }
@@ -22,11 +22,12 @@ public class UnionFind1 implements UF {
 
     /**
      * O(1)
+     *
      * @param p
      * @return
      */
     public int find(int p) {
-        if(p < 0 || p > id.length) {
+        if (p < 0 || p > id.length) {
             throw new IllegalArgumentException("p is out of bound.");
         }
 
@@ -35,6 +36,7 @@ public class UnionFind1 implements UF {
 
     /**
      * O(2)
+     *
      * @param p
      * @param q
      * @return
@@ -48,6 +50,7 @@ public class UnionFind1 implements UF {
      * 数组下标
      * 数组值为关联条件
      * 时间复杂度O(n)
+     *
      * @param p
      * @param q
      */
@@ -56,12 +59,12 @@ public class UnionFind1 implements UF {
         int pId = find(p);
         int qId = find(q);
 
-        if(pId == qId) {
+        if (pId == qId) {
             return;
         }
 
-        for(int i = 0; i < id.length; i++) {
-            if(pId == id[i]) {
+        for (int i = 0; i < id.length; i++) {
+            if (pId == id[i]) {
                 id[i] = qId;
             }
         }

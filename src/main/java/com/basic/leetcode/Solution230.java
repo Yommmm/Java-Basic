@@ -48,7 +48,7 @@ public class Solution230 {
     }
 
     private void inOrder(TreeNode node, List<Integer> list, int k) {
-        if(null == node) return;
+        if (null == node) return;
 
         inOrder(node.left, list, k);
         list.add(node.val);

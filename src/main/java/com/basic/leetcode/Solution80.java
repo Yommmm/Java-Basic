@@ -38,6 +38,7 @@ public class Solution80 {
 
     /**
      * 快慢指针
+     *
      * @param nums
      * @return
      */
@@ -50,7 +51,7 @@ public class Solution80 {
 
         for (int i = 2; i < nums.length; i++) {
             if (nums[i] != nums[lowPoint - 1]) {
-                lowPoint ++;
+                lowPoint++;
                 nums[lowPoint] = nums[i];
             }
         }

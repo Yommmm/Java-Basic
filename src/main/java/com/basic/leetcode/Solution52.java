@@ -5,11 +5,11 @@ import java.util.List;
 
 /**
  * n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
- *
+ * <p>
  * 给定一个整数 n，返回 n 皇后不同的解决方案的数量。
- *
+ * <p>
  * 示例:
- *
+ * <p>
  * 输入: 4
  * 输出: 2
  * 解释: 4 皇后问题存在如下两个不同的解法。
@@ -18,13 +18,13 @@ import java.util.List;
  *   "...Q",
  *   "Q...",
  *   "..Q."],
- *
+ * <p>
  *  ["..Q.",  // 解法 2
  *   "Q...",
  *   "...Q",
  *   ".Q.."]
  * ]
- *
+ * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/n-queens-ii
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
@@ -38,7 +38,7 @@ public class Solution52 {
         System.out.println();
         int i = 0;
         while (i < 100) {
-            int ceil = (int)Math.ceil(Math.random() * 100);
+            int ceil = (int) Math.ceil(Math.random() * 100);
             System.out.println(solution51.solveNQueens(ceil).size() == solution.totalNQueens(ceil));
             i++;
         }
@@ -68,7 +68,7 @@ public class Solution52 {
                 board[x][y] = 'Q';
                 queens[x] = y;
                 if (x + 1 == board.length) {
-                    count ++;
+                    count++;
                 } else {
                     count = backtrace(board, x + 1, count, queens);
                 }

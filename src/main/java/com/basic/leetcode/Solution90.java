@@ -32,7 +32,7 @@ public class Solution90 {
         Solution90 solution = new Solution90();
         List<List<Integer>> lists = solution.subsetsWithDup(new int[]{2, 1, 2, 2});
 
-        lists.stream().forEach(System.out :: println);
+        lists.stream().forEach(System.out::println);
     }
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {

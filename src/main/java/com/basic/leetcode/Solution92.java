@@ -63,7 +63,7 @@ public class Solution92 {
             prev = cur;
 
             cur = next;
-            index ++;
+            index++;
         }
 
         head.next = cur;

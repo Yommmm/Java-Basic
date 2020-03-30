@@ -45,7 +45,7 @@ public class Solution62 {
      * 动态方程：dp[i][j] = dp[i-1][j] + dp[i][j-1]
      * 注意，对于第一行 dp[0][j]，或者第一列 dp[i][0]，由于都是在边界，所以只能为 1
      * 时间复杂度：O(m*n)O(m∗n)
-     *
+     * <p>
      * 空间复杂度：O(m * n)O(m∗n)
      *
      * @param m
@@ -55,11 +55,11 @@ public class Solution62 {
     public int uniquePaths(int m, int n) {
         int[][] map = new int[m][n];
 
-        for(int i = 0; i < n; i++) map[0][i] = 1;
-        for(int j = 0; j < m; j++) map[j][0] = 1;
+        for (int i = 0; i < n; i++) map[0][i] = 1;
+        for (int j = 0; j < m; j++) map[j][0] = 1;
 
-        for(int i = 1; i < m; i++) {
-            for(int j = 1; j < n; j++) {
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
                 map[i][j] = map[i - 1][j] + map[i][j - 1];
             }
         }

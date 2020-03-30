@@ -55,7 +55,7 @@ public class UnionFind2 implements UF {
      * 1.找出两个祖宗
      * 2.比对两个祖宗
      * 3.p祖宗给q祖宗当儿子
-     *
+     * <p>
      * 时间复杂度都是O(h)
      * h为树的高度
      *

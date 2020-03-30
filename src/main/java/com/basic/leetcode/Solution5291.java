@@ -2,11 +2,11 @@ package com.basic.leetcode;
 
 /**
  * 给你一个整数数组 nums，请你返回其中位数为 偶数 的数字的个数。
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * 示例 1：
- *
+ * <p>
  * 输入：nums = [12,345,2,6,7896]
  * 输出：2
  * 解释：
@@ -17,7 +17,7 @@ package com.basic.leetcode;
  * 7896 是 4 位数字（位数为偶数）
  * 因此只有 12 和 7896 是位数为偶数的数字
  * 示例 2：
- *
+ * <p>
  * 输入：nums = [555,901,482,1771]
  * 输出：1
  * 解释：
@@ -28,16 +28,16 @@ public class Solution5291 {
     public static void main(String[] args) {
         Solution5291 solution = new Solution5291();
 
-        System.out.println(solution.findNumbers(new int[]{12,345,2,6,7896}));
-        System.out.println(solution.findNumbers(new int[]{555,901,482,1771}));
+        System.out.println(solution.findNumbers(new int[]{12, 345, 2, 6, 7896}));
+        System.out.println(solution.findNumbers(new int[]{555, 901, 482, 1771}));
     }
 
     public int findNumbers(int[] nums) {
         int result = 0;
 
-        for(int num : nums) {
+        for (int num : nums) {
             String s = String.valueOf(num);
-            if((s.length() & 1) == 0) {
+            if ((s.length() & 1) == 0) {
                 result += 1;
             }
         }

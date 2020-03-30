@@ -33,20 +33,20 @@ public class Solution222 {
     }
 
     public int countNodes(TreeNode root) {
-        if(root == null) return 0;
+        if (root == null) return 0;
         int ld = getDepth(root.left);
         int rd = getDepth(root.right);
-        if(ld == rd){
+        if (ld == rd) {
             return (1 << ld) + countNodes(root.right);
-        } else{
+        } else {
             return (1 << rd) + countNodes(root.left);
         }
     }
 
-    public int getDepth(TreeNode root){
+    public int getDepth(TreeNode root) {
         int d = 0;
         TreeNode temp = root;
-        while(temp != null){
+        while (temp != null) {
             d++;
             temp = temp.left;
         }

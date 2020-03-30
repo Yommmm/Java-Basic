@@ -17,7 +17,7 @@ public class VolatileThread extends Thread {
         try {
             while (true) {
                 System.out.println(test.hashCode());
-                if(cm) {
+                if (cm) {
                     Thread.sleep(30);
                     test.count = test.count + 1;
                     System.out.println(getName() + "修改值的线程：" + test.count);

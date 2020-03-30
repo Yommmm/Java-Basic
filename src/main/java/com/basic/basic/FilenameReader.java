@@ -10,7 +10,7 @@ public class FilenameReader {
 
         System.out.println(file.getName());
         String[] list = file.list();
-        for(String name : list) {
+        for (String name : list) {
             System.out.println("source " + name + ";");
         }
     }

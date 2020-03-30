@@ -57,7 +57,7 @@ public class Solution400 {
          * 1 2 3 4 5 6 7 8 9 1011 1213 1415 1617 1819
          */
         int which = (n - 1) / k + (int) Math.pow(10, k - 1);
-        System.out.println("which: " + which + "  n: " + n + "  k: "+ k);
+        System.out.println("which: " + which + "  n: " + n + "  k: " + k);
         String s = String.valueOf(which);
         int r = n % k;
         if (r == 0) return s.charAt(s.length() - 1) - '0';

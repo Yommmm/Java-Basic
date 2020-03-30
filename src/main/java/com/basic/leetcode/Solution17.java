@@ -5,13 +5,13 @@ import java.util.*;
 
 /**
  * 给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
- *
+ * <p>
  * 给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。
- *
+ * <p>
  * 九宫格输入界面
- *
+ * <p>
  * 示例:
- *
+ * <p>
  * 输入："23"
  * 输出：["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
  * 说明:
@@ -35,11 +35,12 @@ public class Solution17 {
 
     /**
      * 可使用回溯法
+     *
      * @param digits
      * @return
      */
     public List<String> letterCombinations(String digits) {
-        if(digits.length() == 0) {
+        if (digits.length() == 0) {
             return new ArrayList<>();
         }
 
@@ -47,18 +48,18 @@ public class Solution17 {
 
         List<String> standard = map.containsKey(digits.charAt(0)) ? map.get(digits.charAt(0)) : new ArrayList<>();
 
-        for(int i = 1; i < digits.length(); i++) {
+        for (int i = 1; i < digits.length(); i++) {
 
-            if(map.containsKey(digits.charAt(i))) {
+            if (map.containsKey(digits.charAt(i))) {
                 List<String> compare = map.get(digits.charAt(i));
                 List<String> temp = new ArrayList<>();
-                if(standard.size() == 0) {
+                if (standard.size() == 0) {
                     standard = compare;
                     continue;
                 }
 
-                for(int j = 0; j < standard.size(); j++) {
-                    for(int k = 0; k < compare.size(); k++) {
+                for (int j = 0; j < standard.size(); j++) {
+                    for (int k = 0; k < compare.size(); k++) {
                         temp.add(standard.get(j) + compare.get(k));
                     }
                 }
@@ -127,6 +128,7 @@ public class Solution17 {
 
     /**
      * 回溯法
+     *
      * @param digits
      * @return
      */

@@ -48,17 +48,17 @@ public class Solution448 {
     }
 
     public List<Integer> findDisappearedNumbers2(int[] nums) {
-        if(null == nums) return null;
+        if (null == nums) return null;
 
         List<Integer> result = new ArrayList<>();
         boolean[] have = new boolean[nums.length];
 
-        for(int num : nums) {
+        for (int num : nums) {
             have[num - 1] = true;
         }
 
-        for(int i = 0; i < have.length; i++) {
-            if(!have[i]) result.add(i + 1);
+        for (int i = 0; i < have.length; i++) {
+            if (!have[i]) result.add(i + 1);
         }
 
         return result;

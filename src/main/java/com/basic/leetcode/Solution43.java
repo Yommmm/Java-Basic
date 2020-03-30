@@ -29,7 +29,7 @@ public class Solution43 {
     }
 
     public String multiply(String num1, String num2) {
-        if(null == num1 || null == num2
+        if (null == num1 || null == num2
                 || 0 == num1.length() || 0 == num2.length()
                 || "0".equals(num1) || "0".equals(num2)) {
             return "0";
@@ -37,7 +37,7 @@ public class Solution43 {
 
         String result = "";
 
-        for(int i = num2.length() - 1; i >= 0; i--) {
+        for (int i = num2.length() - 1; i >= 0; i--) {
             String multiply = this.multiply(num1, num2.charAt(i));
 
             StringBuilder temp = new StringBuilder();

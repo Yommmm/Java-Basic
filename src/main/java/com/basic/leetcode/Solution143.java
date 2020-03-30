@@ -39,7 +39,7 @@ public class Solution143 {
 
     public void reorderList1(ListNode head) {
         ListNode cur = head;
-        while(null != cur) {
+        while (null != cur) {
             cur.next = reverse(cur.next);
             cur = cur.next;
         }

@@ -2,18 +2,18 @@ package com.basic.leetcode;
 
 /**
  * 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
- *
+ * <p>
  * 示例 1:
- *
+ * <p>
  * 输入: "hello"
  * 输出: "holle"
  * 示例 2:
- *
+ * <p>
  * 输入: "leetcode"
  * 输出: "leotcede"
  * 说明:
  * 元音字母不包含字母"y"。
- *
+ * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/reverse-vowels-of-a-string
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
@@ -33,11 +33,11 @@ public class Solution345 {
         int right = s.length() - 1;
 
         while (left < right) {
-            if(!is(chars[left])) {
+            if (!is(chars[left])) {
                 left++;
                 continue;
             }
-            if(!is(chars[right])) {
+            if (!is(chars[right])) {
                 right--;
                 continue;
             }

@@ -15,7 +15,7 @@ public class Solution69 {
     }
 
     public int mySqrt(int x) {
-        if(x == 0) {
+        if (x == 0) {
             return 0;
         }
 
@@ -25,14 +25,14 @@ public class Solution69 {
         while (left < right) {
             long mid = (left + right + 1) >>> 1;
 
-            if(mid * mid > x) {
+            if (mid * mid > x) {
                 right = mid - 1;
             } else {
                 left = mid;
             }
         }
 
-        return (int)left;
+        return (int) left;
     }
 
 }

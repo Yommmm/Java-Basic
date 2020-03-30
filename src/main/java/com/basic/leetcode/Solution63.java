@@ -55,11 +55,12 @@ public class Solution63 {
      * 1.数组值对应的为到达该点的路径和
      * 2.对于障碍物，设置值为0
      * 3.其他的按62题方式的加法获得
+     *
      * @param obstacleGrid
      * @return
      */
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-        if(obstacleGrid[0][0] == 1) {
+        if (obstacleGrid[0][0] == 1) {
             return 0;
         }
 

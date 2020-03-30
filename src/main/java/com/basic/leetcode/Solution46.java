@@ -23,13 +23,13 @@ public class Solution46 {
     }
 
     private void rc(List<List<Integer>> result, List<Integer> temp, int[] nums) {
-        if(temp.size() == nums.length) {
+        if (temp.size() == nums.length) {
             result.add(new ArrayList<>(temp));
             return;
         }
 
-        for(int i = 0; i < nums.length; i++) {
-            if(temp.contains(nums[i])) {
+        for (int i = 0; i < nums.length; i++) {
+            if (temp.contains(nums[i])) {
                 continue;
             }
             temp.add(nums[i]);

@@ -27,7 +27,7 @@ public class Solution109 {
             return null;
         }
 
-        if(null == head.next) {
+        if (null == head.next) {
             return new TreeNode(head.val);
         }
 
@@ -42,14 +42,14 @@ public class Solution109 {
 
         TreeNode node = new TreeNode(low.val);
 
-        if(null != prev) {
+        if (null != prev) {
             prev.next = null;
         }
 
         node.left = sortedListToBST(head);
         node.right = sortedListToBST(low.next);
 
-        if(null != low) {
+        if (null != low) {
             low.next = null;
         }
 

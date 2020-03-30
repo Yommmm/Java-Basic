@@ -16,7 +16,7 @@ public class JavaHeapOOMDemo {
         }
     }
 
-    static class OOMObject{
+    static class OOMObject {
 
     }
 

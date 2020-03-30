@@ -26,8 +26,8 @@ public class AVLTree<K extends Comparable<K>, V> {
         List<K> keys = new ArrayList<>();
         inOrder(keys);
 
-        for(int i = 1; i < keys.size(); i++) {
-            if(keys.get(i - 1).compareTo(keys.get(i)) > 0) {
+        for (int i = 1; i < keys.size(); i++) {
+            if (keys.get(i - 1).compareTo(keys.get(i)) > 0) {
                 return false;
             }
         }
@@ -39,7 +39,7 @@ public class AVLTree<K extends Comparable<K>, V> {
     }
 
     public void inOrder(Node node, List<K> keys) {
-        if(null == node)
+        if (null == node)
             return;
 
         inOrder(node.left, keys);
@@ -191,6 +191,7 @@ public class AVLTree<K extends Comparable<K>, V> {
 
     /**
      * 从二分搜索树中删除键为key的节点
+     *
      * @param key
      * @return
      */

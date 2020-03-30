@@ -3,51 +3,51 @@ package com.basic.datastruct.stack;
 import com.basic.datastruct.linkedlist.LinkedList;
 
 public class LinkedListStack<E> implements Stack<E> {
-	
-	private LinkedList<E> linkedList;
-	
-	private int size;
-	
-	public LinkedListStack() {
-		this.linkedList = new LinkedList<E>();
-		this.size = 0;
-	}
 
-	@Override
-	public void push(E e) {
-		linkedList.addFirst(e);
-		size++;
-	}
+    private LinkedList<E> linkedList;
 
-	@Override
-	public E pop() {
-		E e = linkedList.removeFirst();
-		size--;
-		return e;
-	}
+    private int size;
 
-	@Override
-	public E peek() {
-		return linkedList.getFirst();
-	}
+    public LinkedListStack() {
+        this.linkedList = new LinkedList<E>();
+        this.size = 0;
+    }
 
-	@Override
-	public int getSize() {
-		return size;
-	}
+    @Override
+    public void push(E e) {
+        linkedList.addFirst(e);
+        size++;
+    }
 
-	@Override
-	public boolean isEmpty() {
-		return linkedList.isEmpty();
-	}
+    @Override
+    public E pop() {
+        E e = linkedList.removeFirst();
+        size--;
+        return e;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder res = new StringBuilder();
-		res.append("LinkedListStack: Pop[");
-		res.append(linkedList);
-		res.append("]");
-		return res.toString();
-	}
-	
+    @Override
+    public E peek() {
+        return linkedList.getFirst();
+    }
+
+    @Override
+    public int getSize() {
+        return size;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return linkedList.isEmpty();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder res = new StringBuilder();
+        res.append("LinkedListStack: Pop[");
+        res.append(linkedList);
+        res.append("]");
+        return res.toString();
+    }
+
 }

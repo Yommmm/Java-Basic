@@ -19,7 +19,7 @@ public class Solution33 {
         Solution33 solution = new Solution33();
         System.out.println(solution.search(new int[]{}, 0));
         System.out.println(solution.search(new int[]{0}, 0));
-        System.out.println(solution.search(new int[]{0 , 0}, 0));
+        System.out.println(solution.search(new int[]{0, 0}, 0));
         System.out.println(solution.search(new int[]{0, 1, 2, 3}, 2));
         System.out.println(solution.search(new int[]{4, 5, 6, 0, 1, 2, 3}, 3));
     }
@@ -29,6 +29,7 @@ public class Solution33 {
      * 6 7 0 1 2 4 5
      * 问题不断细化
      * 旨在能在有序的数据段内找出目标值
+     *
      * @param nums
      * @param target
      * @return
@@ -72,9 +73,10 @@ public class Solution33 {
      * 解题思路：
      * 1.寻找左右哪边有序
      * 2.判断有序数据段是否满足查询条件
-     *      Y：直接二分查找
-     *      N：重复【1】【2】步骤直到问题细化到【Y】
+     * Y：直接二分查找
+     * N：重复【1】【2】步骤直到问题细化到【Y】
      * 可理解为把有序的数据段全部排除掉，最后留下的就是解
+     *
      * @param nums
      * @param target
      * @return
@@ -84,14 +86,14 @@ public class Solution33 {
         int right = nums.length - 1;
         int mid = left + (right - left) / 2;
 
-        while(left <= right) {
+        while (left <= right) {
             if (nums[mid] == target) {
                 return mid;
             }
 
-            if(nums[left] <= nums[mid]) {
+            if (nums[left] <= nums[mid]) {
                 // 继续问题细化
-                if(nums[left] <= target && target < nums[mid]) {
+                if (nums[left] <= target && target < nums[mid]) {
                     // 从左边范围寻找
                     right = mid - 1;
                 } else {
@@ -99,7 +101,7 @@ public class Solution33 {
                     left = mid + 1;
                 }
             } else {
-                if(nums[mid] < target && target <= nums[right]) {
+                if (nums[mid] < target && target <= nums[right]) {
                     // 从左边范围寻找
                     left = mid + 1;
                 } else {

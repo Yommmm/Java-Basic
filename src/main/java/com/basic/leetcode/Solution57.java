@@ -34,7 +34,7 @@ public class Solution57 {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         int length = intervals.length;
         int[][] newIntervals = new int[length + 1][];
-        System.arraycopy(intervals, 0,newIntervals, 0, length);
+        System.arraycopy(intervals, 0, newIntervals, 0, length);
         newIntervals[length] = newInterval;
 
         return merge(newIntervals);

@@ -86,10 +86,10 @@ public class Solution445 {
         int add = 0;
         while (!stack1.isEmpty() || !stack2.isEmpty()) {
             int i = (stack1.isEmpty() ? 0 : stack1.pop()) + (stack2.isEmpty() ? 0 : stack2.pop()) + add;
-            if(i >= 10) {
+            if (i >= 10) {
                 i -= 10;
                 add = 1;
-            } else{
+            } else {
                 add = 0;
             }
             ListNode listNode = new ListNode(i);
@@ -97,7 +97,7 @@ public class Solution445 {
             head = listNode;
         }
 
-        if(add == 1) {
+        if (add == 1) {
             ListNode listNode = new ListNode(1);
             listNode.next = head;
             return listNode;

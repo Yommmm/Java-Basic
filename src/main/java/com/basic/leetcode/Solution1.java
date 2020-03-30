@@ -29,9 +29,9 @@ public class Solution1 {
     }
 
     public int[] twoSum(int[] nums, int target) {
-        for(int i = 0; i < nums.length; i++) {
-            for(int j = 0; j < nums.length; j++) {
-                if(i != j && target - nums[i] == nums[j]) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if (i != j && target - nums[i] == nums[j]) {
                     return new int[]{i, j};
                 }
             }
@@ -42,12 +42,12 @@ public class Solution1 {
 
     public int[] twoSum2(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
-        for(int i = 0; i < nums.length; i++) {
-            if(null == map.get(nums[i])) {
+        for (int i = 0; i < nums.length; i++) {
+            if (null == map.get(nums[i])) {
                 map.put(nums[i], i);
             }
             int dif = target - nums[i];
-            if(null != map.get(dif) && map.get(dif) != i) {
+            if (null != map.get(dif) && map.get(dif) != i) {
                 return new int[]{map.get(dif), i};
             }
         }

@@ -25,9 +25,9 @@ public class Solution7 {
     public int reverse(int x) {
         double retValue = 0;
 
-        while(x != 0) {
+        while (x != 0) {
             retValue = retValue * 10 + (x % 10);
-            if(Integer.MAX_VALUE < retValue || Integer.MIN_VALUE > retValue) {
+            if (Integer.MAX_VALUE < retValue || Integer.MIN_VALUE > retValue) {
                 return 0;
             }
             x = x / 10;

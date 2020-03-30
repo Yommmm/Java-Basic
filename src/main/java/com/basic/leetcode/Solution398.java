@@ -29,7 +29,7 @@ class Solution {
     public int pick(int target) {
         int count = 0;
         int index = 0;
-        for (int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] == target) {
                 count++;
                 if (Math.abs(random.nextInt() % count) == 0) index = i;

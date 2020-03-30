@@ -55,7 +55,7 @@ public class Solution56 {
              * condition 1: 第一个子数组直接进入结果集
              * condition 2: 如果即将进入结果集的左边界大于结果集中最后一个的右边界
              */
-            if(resultList.size() == 0 || resultList.get(resultList.size() - 1).right < interval.left) {
+            if (resultList.size() == 0 || resultList.get(resultList.size() - 1).right < interval.left) {
                 resultList.add(interval);
             } else {
                 // 即将进入结果集的左边界小于结果集中最后一个的右边界，取结果集中最后一个子数组右边界与即将进入的右边界的最大值
@@ -66,7 +66,7 @@ public class Solution56 {
 
         System.out.println(resultList);
         int[][] result = new int[resultList.size()][2];
-        for(int i = 0; i < resultList.size(); i++) {
+        for (int i = 0; i < resultList.size(); i++) {
             result[i] = new int[]{resultList.get(i).left, resultList.get(i).right};
         }
 

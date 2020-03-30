@@ -13,9 +13,9 @@ public class FileDemo {
     private void printName(File file, String prefix) {
         System.out.println(prefix + file.getName());
         String[] list = file.list();
-        for(String path : list) {
+        for (String path : list) {
             File nextFile = new File(file.getPath() + "\\" + path);
-            if(nextFile.isFile() || nextFile.list() == null || nextFile.list().length == 0) {
+            if (nextFile.isFile() || nextFile.list() == null || nextFile.list().length == 0) {
                 System.out.println(prefix + "-" + nextFile.getName());
             } else {
                 printName(nextFile, prefix + "-");

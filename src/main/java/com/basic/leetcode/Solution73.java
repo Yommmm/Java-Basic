@@ -72,8 +72,8 @@ public class Solution73 {
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
                 if (0 == matrix[i][j]) {
-                    if(!rowTo0.contains(i)) rowTo0.add(i);
-                    if(!cowTo0.contains(j)) cowTo0.add(j);
+                    if (!rowTo0.contains(i)) rowTo0.add(i);
+                    if (!cowTo0.contains(j)) cowTo0.add(j);
                 }
             }
         }

@@ -51,7 +51,7 @@ public class Solution136 {
     public int singleNumber1(int[] nums) {
         int num = nums[0];
 
-        for(int i = 1; i < nums.length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             num = num ^ nums[i];
         }
 

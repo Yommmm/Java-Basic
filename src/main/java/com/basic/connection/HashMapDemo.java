@@ -7,10 +7,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class HashMapDemo {
 
-	public static void main(String[] args) {
-		Map<String, String> map = new HashMap<>();
-		Hashtable<Object, Object> hashtable = new Hashtable<>();
-		Map<String, String> concurrent = new ConcurrentHashMap<>();
-	}
-	
+    public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
+        Hashtable<Object, Object> hashtable = new Hashtable<>();
+        Map<String, String> concurrent = new ConcurrentHashMap<>();
+    }
+
 }

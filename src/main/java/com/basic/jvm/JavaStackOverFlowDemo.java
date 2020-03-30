@@ -9,7 +9,7 @@ public class JavaStackOverFlowDemo {
     private int stacklength = 1;
 
     public void stack() {
-        stacklength ++;
+        stacklength++;
         stack();
     }
 

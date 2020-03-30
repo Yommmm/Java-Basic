@@ -47,7 +47,7 @@ public class Solution5143 {
         }
 
         int[] arr = new int[result.size()];
-        for(int k = 0; k < result.size(); k ++) {
+        for (int k = 0; k < result.size(); k++) {
             arr[k] = result.get(k);
         }
 

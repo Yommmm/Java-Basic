@@ -61,7 +61,7 @@ public class Solution5292 {
 
         // 申明优先队列，数组元素进入堆内
         PriorityQueue<Integer> minHeap = new PriorityQueue<>(len);
-        for(int num : nums) {
+        for (int num : nums) {
             minHeap.offer(num);
         }
 

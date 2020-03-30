@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class BSTDemo {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		/*BST<Integer> bst = new BST<Integer>();
 		Random random = new Random();
 		
@@ -22,8 +22,8 @@ public class BSTDemo {
 		System.out.println(list);
 		System.out.println(list.size());*/
 
-		BSTDemo bstdemo = new BSTDemo();
-		bstdemo.testDelNode();
+        BSTDemo bstdemo = new BSTDemo();
+        bstdemo.testDelNode();
 
 //		System.out.println(bst.toString());
 //
@@ -43,26 +43,26 @@ public class BSTDemo {
 //		bst.inOrder();
 //		System.out.println(bst.removeMax());
 //		bst.inOrder();
-	}
-	
-	public void testDelNode() {
-		BST<Integer> bst = new BST<>();
-		bst.add(8);
-		bst.add(7);
-		bst.add(66);
-		bst.add(1);
-		bst.add(9);
-		bst.add(3);
-		bst.add(10);
-		bst.add(88);
-		bst.add(77);
-		
-		bst.inOrder();
+    }
+
+    public void testDelNode() {
+        BST<Integer> bst = new BST<>();
+        bst.add(8);
+        bst.add(7);
+        bst.add(66);
+        bst.add(1);
+        bst.add(9);
+        bst.add(3);
+        bst.add(10);
+        bst.add(88);
+        bst.add(77);
+
+        bst.inOrder();
 //		bst.remove(66);
-		bst.inOrder();
-		bst.preOrder();
-		bst.postOrder();
-		
-	}
-	
+        bst.inOrder();
+        bst.preOrder();
+        bst.postOrder();
+
+    }
+
 }

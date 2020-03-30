@@ -4,35 +4,35 @@ import com.basic.datastruct.queue.Queue;
 
 public class PriorityQueue<E extends Comparable<E>> implements Queue<E> {
 
-	private MaxHeap<E> maxHeap;
-	
-	public PriorityQueue() {
-		this.maxHeap = new MaxHeap<>();
-	}
+    private MaxHeap<E> maxHeap;
 
-	@Override
-	public void enQueue(E e) {
-		maxHeap.add(e);
-	}
+    public PriorityQueue() {
+        this.maxHeap = new MaxHeap<>();
+    }
 
-	@Override
-	public E deQueue() {
-		return maxHeap.extractMax();
-	}
+    @Override
+    public void enQueue(E e) {
+        maxHeap.add(e);
+    }
 
-	@Override
-	public E getFront() {
-		return maxHeap.findMax();
-	}
+    @Override
+    public E deQueue() {
+        return maxHeap.extractMax();
+    }
 
-	@Override
-	public int getSize() {
-		return maxHeap.size();
-	}
+    @Override
+    public E getFront() {
+        return maxHeap.findMax();
+    }
 
-	@Override
-	public boolean isEmpty() {
-		return maxHeap.isEmpty();
-	}
+    @Override
+    public int getSize() {
+        return maxHeap.size();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return maxHeap.isEmpty();
+    }
 
 }

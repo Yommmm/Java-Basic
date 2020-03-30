@@ -48,9 +48,9 @@ public class Solution83 {
     }
 
     public ListNode deleteDuplicates2(ListNode head) {
-        if(head == null || head.next == null) return head;
+        if (head == null || head.next == null) return head;
 
-        if(head.val == head.next.val) {
+        if (head.val == head.next.val) {
             head = deleteDuplicates2(head.next);
         } else {
             head.next = deleteDuplicates2(head.next);

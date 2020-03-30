@@ -25,8 +25,8 @@ public class Solution84 {
     public static void main(String[] args) {
         Solution84 solution = new Solution84();
 
-        System.out.println(solution.largestRectangleArea(new int[]{2,1,5,6,2,3}));
-        System.out.println(solution.largestRectangleArea(new int[]{2,1,5,6,2,3}));
+        System.out.println(solution.largestRectangleArea(new int[]{2, 1, 5, 6, 2, 3}));
+        System.out.println(solution.largestRectangleArea(new int[]{2, 1, 5, 6, 2, 3}));
     }
 
     public int largestRectangleArea(int[] heights) {
@@ -34,7 +34,7 @@ public class Solution84 {
         stack.push(-1);
         int area = 0;
 
-        for(int i = 0; i < heights.length; i++) {
+        for (int i = 0; i < heights.length; i++) {
             /**
              * ①保证栈中数据出栈从大到小有序
              * ②即将入栈元素比栈顶元素小时，计算栈中最大区域

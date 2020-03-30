@@ -99,6 +99,7 @@ public class Solution34 {
 
     /**
      * 二分查找
+     *
      * @param nums
      * @param target
      * @return
@@ -115,7 +116,7 @@ public class Solution34 {
         }
 
         targetRange[0] = leftIdx;
-        targetRange[1] = extremeInsertionIndex(nums, target, false)-1;
+        targetRange[1] = extremeInsertionIndex(nums, target, false) - 1;
 
         return targetRange;
     }
@@ -128,9 +129,8 @@ public class Solution34 {
             int mid = (lo + hi) / 2;
             if (nums[mid] > target || (left && target == nums[mid])) {
                 hi = mid;
-            }
-            else {
-                lo = mid+1;
+            } else {
+                lo = mid + 1;
             }
         }
 

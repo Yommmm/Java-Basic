@@ -57,9 +57,9 @@ public class Solution414 {
                 third = nums[i];
             }
         }
-        if (third == Long.MIN_VALUE) return (int)first;
+        if (third == Long.MIN_VALUE) return (int) first;
 
-        return (int)third;
+        return (int) third;
     }
 
 }

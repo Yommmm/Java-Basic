@@ -5,22 +5,22 @@ import java.util.HashMap;
 
 /**
  * 编写一个函数来查找字符串数组中的最长公共前缀。
- *
+ * <p>
  * 如果不存在公共前缀，返回空字符串 ""。
- *
+ * <p>
  * 示例 1:
- *
+ * <p>
  * 输入: ["flower","flow","flight"]
  * 输出: "fl"
  * 示例 2:
- *
+ * <p>
  * 输入: ["dog","racecar","car"]
  * 输出: ""
  * 解释: 输入不存在公共前缀。
  * 说明:
- *
+ * <p>
  * 所有输入只包含小写字母 a-z 。
- *
+ * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/longest-common-prefix
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
@@ -64,9 +64,9 @@ public class Solution14 {
 
     public String longestCommonPrefix(String[] strs) {
         int lower = Integer.MAX_VALUE;
-        for(String str : strs) {
+        for (String str : strs) {
             lower = Math.min(lower, str.length());
-            if("".equals(str)) {
+            if ("".equals(str)) {
                 return str;
             }
             this.add(str);
@@ -74,8 +74,8 @@ public class Solution14 {
 
         StringBuilder sb = new StringBuilder();
         Node cur = root;
-        while(cur.next.size() > 0) {
-            if(cur.next.size() == 1) {
+        while (cur.next.size() > 0) {
+            if (cur.next.size() == 1) {
                 ArrayList<Character> list = new ArrayList<>(cur.next.keySet());
                 sb.append(list.get(0));
                 cur = cur.next.get(list.get(0));
@@ -89,29 +89,30 @@ public class Solution14 {
 
     /**
      * 这道题不应该用Trie
+     *
      * @param strs
      * @return
      */
     public String longestCommonPrefix2(String[] strs) {
-        if(strs == null || strs.length == 0) {
+        if (strs == null || strs.length == 0) {
             return "";
         }
 
         String standard = strs[0];
-        for(int i = 0; i < strs.length; i++) {
+        for (int i = 0; i < strs.length; i++) {
 //            System.out.println(standard + " " + strs[i]);
             int minlength = Math.min(standard.length(), strs[i].length());
-            if(minlength == 0) {
+            if (minlength == 0) {
                 return "";
             }
 //            System.out.println(minlength);
-            for(int j = 0; j < minlength; j++) {
+            for (int j = 0; j < minlength; j++) {
 //                System.out.println(standard.charAt(j) + "   " + strs[i].charAt(j));
-                if(standard.charAt(j) != strs[i].charAt(j)) {
+                if (standard.charAt(j) != strs[i].charAt(j)) {
                     standard = standard.substring(0, j);
                     break;
                 }
-                if(j == minlength - 1) {
+                if (j == minlength - 1) {
                     standard = standard.substring(0, minlength);
                     break;
                 }
@@ -122,14 +123,14 @@ public class Solution14 {
     }
 
     public String longestCommonPrefix3(String[] strs) {
-        if(strs == null || strs.length == 0)
+        if (strs == null || strs.length == 0)
             return "";
 
         String prefix = strs[0];
-        for(int i = 1; i < strs.length; i++) {
+        for (int i = 1; i < strs.length; i++) {
             while (strs[i].indexOf(prefix) != 0) {
                 prefix = prefix.substring(0, prefix.length() - 1);
-                if(prefix.isEmpty())
+                if (prefix.isEmpty())
                     return "";
             }
         }
@@ -140,22 +141,22 @@ public class Solution14 {
     public static void main(String[] args) {
         Solution14 solution = new Solution14();
 
-        String[] strs = {"flower","flow","flight"};
+        String[] strs = {"flower", "flow", "flight"};
         System.out.println(solution.longestCommonPrefix3(strs));
 
-        String[] strs1 = {"","b"};
+        String[] strs1 = {"", "b"};
         System.out.println(solution.longestCommonPrefix3(strs1));
 
-        String[] strs2 = {"dog","racecar","car"};
+        String[] strs2 = {"dog", "racecar", "car"};
         System.out.println(solution.longestCommonPrefix3(strs2));
 
-        String[] strs3 = {"aa","a"};
+        String[] strs3 = {"aa", "a"};
         System.out.println(solution.longestCommonPrefix3(strs3));
 
-        String[] strs4 = {"aaa","aa"};
+        String[] strs4 = {"aaa", "aa"};
         System.out.println(solution.longestCommonPrefix3(strs4));
 
-        String[] strs5 = {"flower","","flight"};
+        String[] strs5 = {"flower", "", "flight"};
         System.out.println(solution.longestCommonPrefix3(strs5));
 
         String[] strs6 = {""};

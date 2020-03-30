@@ -40,10 +40,10 @@ public class Solution347 {
         PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> map.get(a) - map.get(b));
         for (Integer key : map.keySet()) {
             heap.add(key);
-            if(heap.size() > k) heap.poll();
+            if (heap.size() > k) heap.poll();
         }
 
-        while(!heap.isEmpty()) {
+        while (!heap.isEmpty()) {
             result.add(heap.poll());
         }
 
@@ -64,7 +64,7 @@ public class Solution347 {
         list.addAll(entries);
         Collections.sort(list, (a, b) -> b.getValue() - a.getValue());
 
-        for(int i = 0; i < k; i++) {
+        for (int i = 0; i < k; i++) {
             result.add(list.get(i).getKey());
         }
 

@@ -41,7 +41,7 @@ public class Solution415 {
             j--;
         }
 
-        if(up == 1) result.append(1);
+        if (up == 1) result.append(1);
 
         return result.reverse().toString();
     }

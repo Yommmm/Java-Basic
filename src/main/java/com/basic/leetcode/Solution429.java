@@ -30,7 +30,7 @@ public class Solution429 {
 
     public List<List<Integer>> levelOrder(Node root) {
         List<List<Integer>> result = new ArrayList<>();
-        if(null == root) return result;
+        if (null == root) return result;
 
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
@@ -39,7 +39,7 @@ public class Solution429 {
             List<Integer> level = new ArrayList<>();
             int size = queue.size();
 
-            for(int i = 0; i < size; i++) {
+            for (int i = 0; i < size; i++) {
                 Node poll = queue.poll();
                 queue.addAll(poll.children);
                 level.add(poll.val);

@@ -46,7 +46,7 @@ public class Solution141 {
 
         while (slow != fast) {
             // 百米跑道，有终点就不是环形
-            if(null == fast || null == fast.next) {
+            if (null == fast || null == fast.next) {
                 return false;
             }
 

@@ -15,7 +15,7 @@ public class ThreadLocalObject {
     }
 
     public void getValue() {
-        if("Thread8".equals(name)) {
+        if ("Thread8".equals(name)) {
             System.out.println();
         }
         System.out.println(name + "'s ThreadLocal is: " + tl.get());
