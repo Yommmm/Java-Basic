@@ -12,4 +12,8 @@ public class Singer {
         System.out.println("I am singing!");
     }
 
+    public void haha(String haha) {
+        System.out.println(haha);
+    }
+
 }
