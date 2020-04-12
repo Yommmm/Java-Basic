@@ -9,7 +9,7 @@ public class ServiceRR {
     public void rr() {
         try {
             readWriteLock.readLock().lock();
-            System.out.println(Thread.currentThread().getName() + "开始睡觉！");
+            System.out.println(Thread.currentThread().getName() + "开始加锁睡觉！");
             Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
