@@ -11,10 +11,10 @@ public class Run {
         MyThread t5 = new MyThread(myService);
 
         t1.start();
-        t2.start();
-        t3.start();
-        t4.start();
-        t5.start();
+//        t2.start();
+//        t3.start();
+//        t4.start();
+//        t5.start();
 
     }
 

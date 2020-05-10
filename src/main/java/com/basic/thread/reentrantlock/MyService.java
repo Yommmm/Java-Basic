@@ -12,6 +12,13 @@ public class MyService {
         for (int i = 0; i < 5; i++) {
             System.out.println("Thread Name: " + Thread.currentThread().getName() + " " + (i + 1));
         }
+        invoke();
+        lock.unlock();
+    }
+
+    private void invoke() {
+        lock.lock();
+        System.out.println("reentrant!");
         lock.unlock();
     }
 
